@@ -17,6 +17,9 @@
 
     return `<span class="project-icon" aria-hidden="true">${project.mark}</span>`;
   };
+  const storeLinksMarkup = (project, useShortLabels = true) => (project.storeLinks || []).map((item) => `
+    <a class="table-link store-link" href="${item.url}">${useShortLabels ? item.shortLabel : item.label}</a>
+  `).join("");
 
   const renderTable = (items) => {
     if (!table) return;
@@ -36,6 +39,7 @@
           <div class="project-links-inline">
             <a class="table-link" href="${project.repoUrl}">${project.sourceRepo}</a>
             <a class="table-link" href="${localPageHref(project)}">Pages</a>
+            ${storeLinksMarkup(project)}
           </div>
         </td>
       </tr>
@@ -54,6 +58,7 @@
         <div class="mobile-card-links">
           <a class="button primary" href="${localPageHref(project)}">Pages</a>
           <a class="button secondary" href="${project.repoUrl}">참조 레포</a>
+          ${(project.storeLinks || []).map((item) => `<a class="button secondary" href="${item.url}">${item.shortLabel}</a>`).join("")}
         </div>
       </article>
     `).join("");

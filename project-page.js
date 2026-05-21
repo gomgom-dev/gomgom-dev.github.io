@@ -14,6 +14,7 @@
   const heroIcon = project.icon
     ? `<img class="project-hero-icon" src="../${project.icon}" alt="" loading="lazy">`
     : `<span class="project-hero-mark" aria-hidden="true">${project.mark}</span>`;
+  const storeLinks = project.storeLinks || [];
 
   document.title = `${project.name} | gomgom.dev`;
   const description = document.querySelector('meta[name="description"]');
@@ -23,6 +24,7 @@
     { label: "프로젝트 홈", href: localPath },
     { label: "참조 레포", href: project.repoUrl },
     { label: "참조 Pages", href: project.referenceUrl },
+    ...storeLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "지원 / Issues", href: project.supportUrl },
     { label: "Privacy", href: policyHref }
   ].filter((item) => item.href);
@@ -41,6 +43,7 @@
         <div class="hero-actions">
           <a class="button primary" href="${project.repoUrl}">GitHub 레포</a>
           <a class="button secondary" href="${project.referenceUrl}">참조 페이지</a>
+          ${storeLinks.map((item) => `<a class="button secondary" href="${item.url}">${item.shortLabel}</a>`).join("")}
         </div>
       </div>
       <aside class="project-meta-panel" aria-label="프로젝트 메타 정보">

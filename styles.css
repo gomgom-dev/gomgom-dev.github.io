@@ -173,7 +173,7 @@ main {
 
 .summary-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid var(--strong-line);
 }
 
@@ -262,7 +262,7 @@ main {
 
 .project-table {
   width: 100%;
-  min-width: 760px;
+  min-width: 900px;
   border-collapse: collapse;
   background: transparent;
 }

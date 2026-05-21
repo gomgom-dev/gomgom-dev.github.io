@@ -15,6 +15,18 @@ window.GOMGOM_PROJECTS = [
       "삭제한 분석 내용 아카이브 복원"
     ],
     stack: ["macOS", "OCR", "Swift", "App Store"],
+    storeLinks: [
+      {
+        label: "iOS App Store",
+        shortLabel: "iOS Store",
+        url: "https://apps.apple.com/kr/app/%EA%B8%80%EB%94%B0%EC%98%A4%EA%B8%B0/id6764681575"
+      },
+      {
+        label: "macOS App Store",
+        shortLabel: "macOS Store",
+        url: "https://apps.apple.com/kr/app/%EA%B8%80%EB%94%B0%EC%98%A4%EA%B8%B0/id6764681575?mt=12"
+      }
+    ],
     sourceRepo: "gomgom-dev/gomgom-dev.github.io",
     repoUrl: "https://github.com/gomgom-dev/gomgom-dev.github.io/tree/main/geulttaogi",
     referenceUrl: "https://github.com/jhny-kor/jhny-kor.github.io/tree/main/geulttaogi",
@@ -173,6 +185,13 @@ window.GOMGOM_PROJECTS = [
       "이슈 기반 개선 요청 연결"
     ],
     stack: ["Swift", "Security", "Scanner", "Tooling"],
+    storeLinks: [
+      {
+        label: "macOS App Store",
+        shortLabel: "macOS Store",
+        url: "https://apps.apple.com/kr/app/koda/id6770264012?mt=12"
+      }
+    ],
     sourceRepo: "jhny-kor/sec-chk",
     repoUrl: "https://github.com/jhny-kor/sec-chk",
     referenceUrl: "https://github.com/jhny-kor/sec-chk",
