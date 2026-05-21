@@ -147,26 +147,49 @@ window.GOMGOM_PROJECTS = [
     policyUrl: "./privacy-policy/"
   },
   {
-    slug: "porta",
-    name: "porta",
-    mark: "PT",
-    icon: "assets/icons/porta.png",
-    type: "macOS App",
-    category: "app",
+    slug: "remote-control",
+    name: "Remote Control",
+    mark: "RC",
+    icon: "assets/icons/remote-control.svg",
+    type: "Remote Control Automation",
+    category: "automation",
     summary: "Codex와 로컬 macOS 프로젝트를 원격으로 관리하는 Python/Telegram 기반 매니저입니다.",
-    description: "porta는 Codex 작업, 로컬 프로젝트, Telegram 명령을 연결하는 원격 제어 매니저입니다. 대표 페이지에서는 운영 대상과 자동화 링크를 명확히 분리합니다.",
+    description: "Remote Control은 Codex 작업, 로컬 프로젝트, Telegram 명령을 연결하는 원격 제어 매니저입니다. 대표 페이지에서는 운영 대상과 자동화 링크를 명확히 분리합니다.",
     highlights: [
       "Codex 및 로컬 macOS 프로젝트 원격 관리",
       "Telegram bot 기반 제어 흐름",
       "Python 자동화 스크립트 중심",
-      "porta, macos, automation 토픽"
+      "remote control, macOS, automation 토픽"
     ],
     stack: ["Python", "Telegram", "macOS", "Codex"],
     sourceRepo: "jhny-kor/RemoteControl",
     repoUrl: "https://github.com/jhny-kor/RemoteControl",
     referenceUrl: "https://github.com/jhny-kor/RemoteControl",
-    pagePath: "./porta/",
+    pagePath: "./remote-control/",
     supportUrl: "https://github.com/jhny-kor/RemoteControl/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "porta",
+    name: "porta",
+    mark: "PT",
+    icon: "assets/icons/porta.png",
+    type: "iOS / macOS App",
+    category: "app",
+    summary: "iPhone, iPad, Mac에서 Mac 화면을 보고 조작하는 Apple 원격 제어 클라이언트 앱입니다.",
+    description: "porta는 Mac에서 실행되는 host 앱과 연결해 화면 스트리밍, 클릭, 텍스트 입력을 처리하는 Apple 플랫폼 원격 제어 앱입니다. App Store 준비 흐름과 지원 문서를 별도 페이지로 분리해 관리합니다.",
+    highlights: [
+      "Bonjour 기반 로컬 네트워크 Mac 검색",
+      "6자리 페어링 코드로 연결 승인",
+      "ScreenCaptureKit과 H.264 기반 화면 스트리밍",
+      "iPhone, iPad, Mac 클라이언트 앱 표면"
+    ],
+    stack: ["Swift", "Network.framework", "ScreenCaptureKit", "App Store"],
+    sourceRepo: "jhny-kor/porta",
+    repoUrl: "https://github.com/jhny-kor/porta",
+    referenceUrl: "https://github.com/jhny-kor/porta",
+    pagePath: "./porta/",
+    supportUrl: "https://github.com/jhny-kor/porta/issues",
     policyUrl: "./privacy-policy/"
   },
   {
