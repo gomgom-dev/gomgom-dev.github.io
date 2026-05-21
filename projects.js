@@ -145,41 +145,41 @@ window.GOMGOM_PROJECTS = [
     policyUrl: "./privacy-policy/"
   },
   {
-    slug: "remote-control",
-    name: "RemoteControl",
-    mark: "RC",
+    slug: "porta",
+    name: "porta",
+    mark: "PT",
     status: "참조",
     statusTone: "reference",
     type: "macOS Automation",
     category: "automation",
     summary: "Codex와 로컬 macOS 프로젝트를 원격으로 관리하는 Python/Telegram 기반 매니저입니다.",
-    description: "RemoteControl은 Codex 작업, 로컬 프로젝트, Telegram 명령을 연결하는 원격 제어 매니저입니다. 대표 페이지에서는 운영 대상과 자동화 링크를 명확히 분리합니다.",
+    description: "porta는 Codex 작업, 로컬 프로젝트, Telegram 명령을 연결하는 원격 제어 매니저입니다. 대표 페이지에서는 운영 대상과 자동화 링크를 명확히 분리합니다.",
     highlights: [
       "Codex 및 로컬 macOS 프로젝트 원격 관리",
       "Telegram bot 기반 제어 흐름",
       "Python 자동화 스크립트 중심",
-      "remote-control, macos, automation 토픽"
+      "porta, macos, automation 토픽"
     ],
     stack: ["Python", "Telegram", "macOS", "Codex"],
     sourceRepo: "jhny-kor/RemoteControl",
     repoUrl: "https://github.com/jhny-kor/RemoteControl",
     referenceUrl: "https://github.com/jhny-kor/RemoteControl",
-    pagePath: "./remote-control/",
+    pagePath: "./porta/",
     supportUrl: "https://github.com/jhny-kor/RemoteControl/issues",
     policyUrl: "./privacy-policy/"
   },
   {
-    slug: "sec-chk",
-    name: "sec-chk",
-    mark: "SC",
+    slug: "koda",
+    name: "KODA",
+    mark: "KD",
     status: "참조",
     statusTone: "reference",
-    type: "Security Tool",
+    type: "Security App",
     category: "app",
     summary: "보안 점검과 스캐닝 도구를 다루는 Swift 기반 프로젝트입니다.",
-    description: "sec-chk는 security scanner와 security tools 토픽을 가진 보안 점검 프로젝트입니다. 대표 페이지에서는 저장소, 목적, 지원 경로를 간결하게 제공합니다.",
+    description: "KODA는 security scanner와 security tools 토픽을 가진 보안 점검 프로젝트입니다. 대표 페이지에서는 저장소, 목적, 지원 경로를 간결하게 제공합니다.",
     highlights: [
-      "Security Check 프로젝트",
+      "KODA 보안 점검 프로젝트",
       "Swift 기반 보안 도구 표면",
       "security-scanner, security-tools 토픽",
       "이슈 기반 개선 요청 연결"
@@ -188,32 +188,8 @@ window.GOMGOM_PROJECTS = [
     sourceRepo: "jhny-kor/sec-chk",
     repoUrl: "https://github.com/jhny-kor/sec-chk",
     referenceUrl: "https://github.com/jhny-kor/sec-chk",
-    pagePath: "./sec-chk/",
+    pagePath: "./koda/",
     supportUrl: "https://github.com/jhny-kor/sec-chk/issues",
-    policyUrl: "./privacy-policy/"
-  },
-  {
-    slug: "fashion-trend",
-    name: "fashion-trend",
-    mark: "FT",
-    status: "참조",
-    statusTone: "reference",
-    type: "Report Site",
-    category: "site",
-    summary: "KREAM 크롤링으로 실시간 패션 트렌드를 수집하고 다크 매거진 스타일 HTML 리포트를 생성합니다.",
-    description: "fashion-trend는 패션 트렌드 데이터를 수집하고 HTML 리포트로 전환하는 자동화 프로젝트입니다. 대표 페이지에서는 리포트 성격과 원본 레포를 명확히 보여줍니다.",
-    highlights: [
-      "KREAM 기반 실시간 패션 트렌드 수집",
-      "다크 매거진 스타일 HTML 리포트 생성",
-      "Claude Code 스킬로 활용 가능한 구조",
-      "콘텐츠 리포트 자동화 프로젝트"
-    ],
-    stack: ["Crawler", "HTML Report", "Fashion", "Automation"],
-    sourceRepo: "jhny-kor/fashion-trend",
-    repoUrl: "https://github.com/jhny-kor/fashion-trend",
-    referenceUrl: "https://github.com/jhny-kor/fashion-trend",
-    pagePath: "./fashion-trend/",
-    supportUrl: "https://github.com/jhny-kor/fashion-trend/issues",
     policyUrl: "./privacy-policy/"
   },
   {
@@ -262,30 +238,6 @@ window.GOMGOM_PROJECTS = [
     referenceUrl: "https://github.com/jhny-kor/porta-pages",
     pagePath: "./porta-pages/",
     supportUrl: "https://github.com/jhny-kor/porta-pages/issues",
-    policyUrl: "./privacy-policy/"
-  },
-  {
-    slug: "claw-code",
-    name: "claw-code",
-    mark: "CC",
-    status: "참조",
-    statusTone: "reference",
-    type: "Developer Tool",
-    category: "app",
-    summary: "Claude Code 아카이브를 넘어 실제 개발 작업을 수행하는 도구 실험 레포입니다.",
-    description: "claw-code는 jhny-kor 공개 레포 중 개발 도구 성격이 강한 프로젝트입니다. 대표 페이지에서는 원본 레포와 현재 설명을 보존하고 별도 프로젝트 폴더로 분리합니다.",
-    highlights: [
-      "Developer tooling 실험 프로젝트",
-      "Rust rewrite 언급이 있는 공개 레포",
-      "도구형 프로젝트로 Apps 그룹에 포함",
-      "원본 설명과 레포 링크 보존"
-    ],
-    stack: ["Developer Tool", "Rust", "CLI", "Experiment"],
-    sourceRepo: "jhny-kor/claw-code",
-    repoUrl: "https://github.com/jhny-kor/claw-code",
-    referenceUrl: "https://github.com/jhny-kor/claw-code",
-    pagePath: "./claw-code/",
-    supportUrl: "https://github.com/jhny-kor/claw-code/issues",
     policyUrl: "./privacy-policy/"
   }
 ];
