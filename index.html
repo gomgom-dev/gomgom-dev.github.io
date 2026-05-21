@@ -1,80 +1,175 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gomgom</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 20px;
-  line-height: 1.7;
-  color: #222;
-}
-
-h1 {
-  font-size: 32px;
-}
-
-.card {
-  background: #f6f6f6;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 25px;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gomgom.dev | Apps and Sites</title>
+  <meta name="description" content="gomgom-dev가 배포하는 앱과 사이트를 프로젝트별로 정리한 대표 GitHub Pages 허브입니다.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="gomgom.dev 홈">
+      <span class="brand-mark" aria-hidden="true">g</span>
+      <span>gomgom.dev</span>
+    </a>
+    <nav class="top-nav" aria-label="주요 섹션">
+      <a href="#projects">Projects</a>
+      <a href="#apps">Apps</a>
+      <a href="#sites">Sites</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<h1>gomgom Studio</h1>
+  <main>
+    <section class="hero-section" id="top">
+      <div class="hero-copy">
+        <h1>gomgom.dev</h1>
+        <p>
+          gomgom-dev가 배포하는 앱과 사이트의 통합 홈입니다.
+          jhny-kor 공개 레포와 기존 Pages를 기준으로 프로젝트별 홈페이지,
+          지원 링크, 문서 진입점을 한곳에 정리합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">프로젝트 보기</a>
+          <a class="button secondary" href="https://github.com/gomgom-dev/gomgom-dev.github.io">Pages 저장소</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="대표 사이트 구성">
+        <strong>Unified Pages</strong>
+        <span>Root hub</span>
+        <span>Project folders</span>
+        <span>Shared data</span>
+        <span>Support links</span>
+      </aside>
+    </section>
 
-<p>
-1인 개발자 🐻곰곰이가 제작한 앱과 프로젝트를 소개하는 페이지입니다.<br>
-사용자에게 편리하고 실용적인 기능을 제공하는 서비스를 만드는 것을 목표로 합니다😆.
-</p>
+    <section class="summary-strip" aria-label="사이트 요약">
+      <div><strong data-project-count>0</strong><span>프로젝트</span></div>
+      <div><strong data-app-count>0</strong><span>앱/도구</span></div>
+      <div><strong data-site-count>0</strong><span>사이트/문서</span></div>
+      <div><strong>main</strong><span>GitHub Pages</span></div>
+    </section>
 
-<div class="card">
-<h2>Contact</h2>
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <h2>프로젝트 디렉터리</h2>
+        <p>각 프로젝트는 동일한 구조의 폴더형 홈페이지를 갖습니다. 원본 레포와 배포 페이지를 분리해 추적합니다.</p>
+      </div>
 
-<p>문의사항 또는 협업 요청은 아래 연락처로 문의해주세요.</p>
+      <div class="filter-bar" aria-label="프로젝트 필터">
+        <button class="filter-button active" type="button" data-filter="all">전체</button>
+        <button class="filter-button" type="button" data-filter="app">Apps</button>
+        <button class="filter-button" type="button" data-filter="site">Sites</button>
+        <button class="filter-button" type="button" data-filter="automation">Automation</button>
+        <button class="filter-button" type="button" data-filter="data">Data</button>
+      </div>
 
-<p>
-📧 <a href="mailto:gomgomi.k.dev@gmail.com">gomgomi.k.dev@gmail.com</a>
-</p>
+      <div class="project-table-wrap">
+        <table class="project-table">
+          <thead>
+            <tr>
+              <th>프로젝트</th>
+              <th>상태</th>
+              <th>유형</th>
+              <th>참조 레포</th>
+              <th>Pages</th>
+            </tr>
+          </thead>
+          <tbody data-project-table></tbody>
+        </table>
+      </div>
+      <div class="project-card-list" data-project-cards></div>
+    </section>
 
-<p>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-</svg> <a href="https://instagram.com/dev_gomgom" target="_blank">
-dev_gomgom
-</a>
-</p>
+    <section class="section split" id="apps">
+      <div class="section-heading">
+        <h2>통합 홈페이지 규칙</h2>
+        <p>루트 사이트와 각 프로젝트 페이지가 같은 데이터와 컴포넌트를 사용하도록 정리했습니다.</p>
+      </div>
+      <div class="rule-grid">
+        <article>
+          <span>01</span>
+          <h3>Overview</h3>
+          <p>프로젝트의 목적, 대상 사용자, 현재 배포 표면을 한 문단으로 요약합니다.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Highlights</h3>
+          <p>핵심 기능과 운영상 중요한 특징을 짧은 목록으로 고정합니다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Links</h3>
+          <p>Pages, GitHub, 문서, 이슈, 정책 페이지를 같은 위치에 배치합니다.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Support</h3>
+          <p>문의 메일, 지원 경로, 개인정보 처리방침을 프로젝트마다 연결합니다.</p>
+        </article>
+      </div>
+    </section>
 
-</div>
+    <section class="section template-preview" id="sites">
+      <div class="section-heading">
+        <h2>프로젝트 페이지 템플릿</h2>
+        <p>모든 하위 폴더는 같은 레이아웃으로 렌더링됩니다. 프로젝트별 차이는 `projects.js`의 데이터로만 관리합니다.</p>
+      </div>
+      <div class="template-frame">
+        <div class="template-top">
+          <span>gomgom.dev</span>
+          <span>Project page</span>
+        </div>
+        <div class="template-title">
+          <strong>OpenTax</strong>
+          <p>세금 정보와 정책지원을 검증 가능한 웹 표면으로 정리합니다.</p>
+        </div>
+        <div class="template-body">
+          <div>
+            <h3>Overview</h3>
+            <p>프로젝트 소개와 현재 운영 범위가 먼저 보입니다.</p>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul>
+              <li>주요 기능</li>
+              <li>운영 문서</li>
+              <li>지원 링크</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <p>배포 페이지, GitHub, 이슈 트래커를 한 줄에서 확인합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h2>About</h2>
+    <section class="section contact-section" id="contact">
+      <div>
+        <h2>Contact</h2>
+        <p>문의, 협업, 앱 지원 요청은 아래 채널로 보내주세요.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:gomgomi.k.dev@gmail.com">gomgomi.k.dev@gmail.com</a>
+        <a href="https://instagram.com/dev_gomgom">instagram.com/dev_gomgom</a>
+        <a href="https://github.com/gomgom-dev">github.com/gomgom-dev</a>
+      </div>
+    </section>
+  </main>
 
-<p>
-작고 유용한 도구🔧부터 실생활에 도움이 되는 앱💻까지 지속적으로 개발하고 개선하고 있습니다.<br>
-🍎애플 개발자 멤버십 비용 회수가 1차 목표입니다.🤣
-</p>
+  <footer class="site-footer">
+    <span>gomgom.dev</span>
+    <nav aria-label="정책 링크">
+      <a href="./privacy-policy/">Privacy Policy</a>
+      <a href="https://github.com/gomgom-dev/gomgom-dev.github.io/issues">Issues</a>
+    </nav>
+    <span>Updated 2026-05-21</span>
+  </footer>
 
-</div>
-
+  <script src="./projects.js"></script>
+  <script src="./site.js"></script>
 </body>
 </html>
