@@ -10,6 +10,13 @@
   };
 
   const localPageHref = (project) => project.pagePath.replace("./", "");
+  const iconMarkup = (project) => {
+    if (project.icon) {
+      return `<img class="app-icon" src="./${project.icon}" alt="" loading="lazy">`;
+    }
+
+    return `<span class="project-icon" aria-hidden="true">${project.mark}</span>`;
+  };
 
   const renderTable = (items) => {
     if (!table) return;
@@ -17,17 +24,20 @@
       <tr>
         <td>
           <a class="project-cell" href="${localPageHref(project)}">
-            <span class="project-icon" aria-hidden="true">${project.mark}</span>
-            <span>
+            ${iconMarkup(project)}
+            <span class="project-copy">
               <strong>${project.name}</strong>
               <span>${project.summary}</span>
             </span>
           </a>
         </td>
-        <td><span class="status ${project.statusTone}">${project.status}</span></td>
         <td>${project.type}</td>
-        <td><a class="table-link" href="${project.repoUrl}">${project.sourceRepo}</a></td>
-        <td><a class="table-link" href="${localPageHref(project)}">/${project.slug}/</a></td>
+        <td>
+          <div class="project-links-inline">
+            <a class="table-link" href="${project.repoUrl}">${project.sourceRepo}</a>
+            <a class="table-link" href="${localPageHref(project)}">Pages</a>
+          </div>
+        </td>
       </tr>
     `).join("");
   };
@@ -36,11 +46,14 @@
     if (!cards) return;
     cards.innerHTML = items.map((project) => `
       <article class="mobile-project-card">
-        <h3>${project.name}</h3>
+        <div class="mobile-card-heading">
+          ${iconMarkup(project)}
+          <h3>${project.name}</h3>
+        </div>
         <p>${project.summary}</p>
         <div class="mobile-card-links">
           <a class="button primary" href="${localPageHref(project)}">Pages</a>
-          <a class="button secondary" href="${project.repoUrl}">Repo</a>
+          <a class="button secondary" href="${project.repoUrl}">참조 레포</a>
         </div>
       </article>
     `).join("");

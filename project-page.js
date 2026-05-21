@@ -11,6 +11,9 @@
   const policyHref = project.policyUrl && project.policyUrl.startsWith("http")
     ? project.policyUrl
     : pagePrefix + "privacy-policy/";
+  const heroIcon = project.icon
+    ? `<img class="project-hero-icon" src="../${project.icon}" alt="" loading="lazy">`
+    : `<span class="project-hero-mark" aria-hidden="true">${project.mark}</span>`;
 
   document.title = `${project.name} | gomgom.dev`;
   const description = document.querySelector('meta[name="description"]');
@@ -32,6 +35,7 @@
     <section class="project-hero">
       <div>
         <a class="breadcrumb" href="../">gomgom.dev / Projects</a>
+        ${heroIcon}
         <h1>${project.name}</h1>
         <p>${project.summary}</p>
         <div class="hero-actions">
@@ -41,7 +45,6 @@
       </div>
       <aside class="project-meta-panel" aria-label="프로젝트 메타 정보">
         <dl>
-          <div><dt>Status</dt><dd><span class="status ${project.statusTone}">${project.status}</span></dd></div>
           <div><dt>Type</dt><dd>${project.type}</dd></div>
           <div><dt>Source</dt><dd>${project.sourceRepo}</dd></div>
           <div><dt>Folder</dt><dd>/${project.slug}/</dd></div>
