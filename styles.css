@@ -32,6 +32,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   word-break: keep-all;
+  overflow-x: hidden;
 }
 
 a {
@@ -121,6 +122,11 @@ main {
   font-size: 6rem;
   line-height: 0.98;
   letter-spacing: 0;
+}
+
+.hero-copy,
+.project-hero > div {
+  min-width: 0;
 }
 
 .hero-copy p {
@@ -823,21 +829,47 @@ main {
 }
 
 @media (max-width: 680px) {
+  body {
+    word-break: normal;
+  }
+
   main,
   .site-footer,
   .legal-page {
-    width: min(100% - 28px, var(--max));
+    width: calc(100vw - 72px);
+    max-width: var(--max);
   }
 
   .hero-copy h1,
   .project-hero h1,
   .legal-page h1 {
-    font-size: 3.25rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-size: clamp(2.2rem, 9.5vw, 2.75rem);
+    line-height: 1;
   }
 
   .hero-copy p,
   .project-hero p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-all;
     font-size: 1.05rem;
+  }
+
+  .hero-panel,
+  .project-meta-panel,
+  .portfolio-card,
+  .side-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-section .hero-copy p,
+  .hero-section .hero-panel {
+    width: min(100%, 280px);
   }
 
   .summary-strip,
