@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>gomgom.dev | Apps and Sites</title>
-  <meta name="description" content="gomgom-dev가 배포하는 앱과 사이트를 프로젝트별로 정리한 대표 GitHub Pages 허브입니다.">
+  <title>gomgom-dev | Product Portfolio</title>
+  <meta name="description" content="gomgom-dev가 배포한 앱, 자동화, 데이터 제품을 모은 포트폴리오입니다.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -15,7 +15,9 @@
       <span>gomgom.dev</span>
     </a>
     <nav class="top-nav" aria-label="주요 섹션">
-      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Archive</a>
+      <a href="#approach">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -23,36 +25,43 @@
   <main>
     <section class="hero-section" id="top">
       <div class="hero-copy">
-        <h1>gomgom.dev</h1>
+        <h1>앱, 자동화, 데이터 도구를 제품으로 만듭니다.</h1>
         <p>
-          gomgom-dev가 배포하는 앱과 사이트의 통합 홈입니다.
-          jhny-kor 공개 레포와 기존 Pages를 기준으로 프로젝트별 홈페이지,
-          지원 링크, 문서 진입점을 한곳에 정리합니다.
+          OCR 생산성 앱, 보안 점검 도구, 원격 제어 자동화, 세금 데이터 제품까지
+          실제 배포 표면과 지원 문서를 함께 정리한 gomgom-dev의 작업 포트폴리오입니다.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#projects">프로젝트 보기</a>
-          <a class="button secondary" href="https://github.com/gomgom-dev/gomgom-dev.github.io">Pages 저장소</a>
+          <a class="button primary" href="#work">대표 작업 보기</a>
+          <a class="button secondary" href="https://github.com/gomgom-dev">GitHub 프로필</a>
         </div>
       </div>
-      <aside class="hero-panel" aria-label="대표 사이트 구성">
-        <strong>Project Hub</strong>
-        <span>Apps</span>
-        <span>Sites</span>
-        <span>Automation</span>
-        <span>Support</span>
+      <aside class="hero-panel" aria-label="포트폴리오 요약">
+        <strong>Current Focus</strong>
+        <span>Shipping small apps</span>
+        <span>Automation for daily operations</span>
+        <span>Readable public support pages</span>
+        <span>Data-backed product surfaces</span>
       </aside>
     </section>
 
     <section class="summary-strip" aria-label="사이트 요약">
-      <div><strong data-project-count>0</strong><span>프로젝트</span></div>
-      <div><strong data-app-count>0</strong><span>앱/도구</span></div>
-      <div><strong data-site-count>0</strong><span>사이트/문서</span></div>
+      <div><strong data-project-count>0</strong><span>public projects</span></div>
+      <div><strong data-app-count>0</strong><span>apps & automation</span></div>
+      <div><strong data-site-count>0</strong><span>sites & data</span></div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="section-heading">
+        <h2>대표 작업</h2>
+        <p>앱스토어 배포, 로컬 자동화, 보안/세금 데이터처럼 실제 사용 지점이 분명한 프로젝트를 우선 보여줍니다.</p>
+      </div>
+      <div class="featured-grid" data-featured-projects></div>
     </section>
 
     <section class="section" id="projects">
       <div class="section-heading">
-        <h2>프로젝트 디렉터리</h2>
-        <p>프로젝트별 소개, 참조 레포, 배포 페이지를 바로 확인할 수 있습니다.</p>
+        <h2>프로젝트 아카이브</h2>
+        <p>참조 레포, Pages, App Store 링크를 한 카드에서 확인할 수 있습니다.</p>
       </div>
 
       <div class="filter-bar" aria-label="프로젝트 필터">
@@ -62,26 +71,37 @@
         <button class="filter-button" type="button" data-filter="automation">Automation</button>
         <button class="filter-button" type="button" data-filter="data">Data</button>
       </div>
+      <div class="portfolio-grid" data-project-grid></div>
+    </section>
 
-      <div class="project-table-wrap">
-        <table class="project-table">
-          <thead>
-            <tr>
-              <th>프로젝트</th>
-              <th>유형</th>
-              <th>참조 레포 / Pages / Store</th>
-            </tr>
-          </thead>
-          <tbody data-project-table></tbody>
-        </table>
+    <section class="section approach-section" id="approach">
+      <div class="section-heading">
+        <h2>작업 방식</h2>
+        <p>작은 제품이라도 배포, 지원, 개인정보, 문서 링크까지 사용자가 확인할 수 있는 표면을 함께 만듭니다.</p>
       </div>
-      <div class="project-card-list" data-project-cards></div>
+      <div class="approach-grid">
+        <article>
+          <span>01</span>
+          <h3>Ship product surfaces</h3>
+          <p>앱 아이콘, 소개 페이지, 스토어 링크, 지원 경로를 한 흐름으로 정리합니다.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Automate real work</h3>
+          <p>반복 운영, 원격 제어, 데이터 수집처럼 매일 쓰는 작업을 자동화합니다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Keep proof visible</h3>
+          <p>레포, Pages, 이슈, 정책 문서를 공개 링크로 연결해 프로젝트의 출처를 숨기지 않습니다.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section contact-section" id="contact">
       <div>
-        <h2>Contact</h2>
-        <p>문의, 협업, 앱 지원 요청은 아래 채널로 보내주세요.</p>
+        <h2>함께 만들거나 점검할 일이 있나요?</h2>
+        <p>앱 지원, 협업, 프로젝트 문의는 아래 채널로 보내주세요.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:gomgomi.k.dev@gmail.com">gomgomi.k.dev@gmail.com</a>

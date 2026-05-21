@@ -12,7 +12,7 @@
     ? project.policyUrl
     : pagePrefix + "privacy-policy/";
   const heroIcon = project.icon
-    ? `<img class="project-hero-icon" src="../${project.icon}" alt="" loading="lazy">`
+    ? `<img class="project-hero-icon" src="../${project.icon}" alt="">`
     : `<span class="project-hero-mark" aria-hidden="true">${project.mark}</span>`;
   const storeLinks = project.storeLinks || [];
 

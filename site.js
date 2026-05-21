@@ -1,8 +1,16 @@
 (function () {
   const projects = window.GOMGOM_PROJECTS || [];
-  const table = document.querySelector("[data-project-table]");
-  const cards = document.querySelector("[data-project-cards]");
+  const featuredProjects = ["geulttaogi", "koda", "porta", "opentax"];
+  const grid = document.querySelector("[data-project-grid]");
+  const featuredGrid = document.querySelector("[data-featured-projects]");
   const filters = Array.from(document.querySelectorAll("[data-filter]"));
+
+  const categoryLabels = {
+    app: "App",
+    site: "Site",
+    automation: "Automation",
+    data: "Data"
+  };
 
   const byCategory = (category) => {
     if (category === "all") return projects;
@@ -10,77 +18,98 @@
   };
 
   const localPageHref = (project) => project.pagePath.replace("./", "");
+
   const iconMarkup = (project) => {
     if (project.icon) {
-      return `<img class="app-icon" src="./${project.icon}" alt="" loading="lazy">`;
+      return `<img class="app-icon" src="./${project.icon}" alt="">`;
     }
 
     return `<span class="project-icon" aria-hidden="true">${project.mark}</span>`;
   };
-  const storeLinksMarkup = (project, useShortLabels = true) => (project.storeLinks || []).map((item) => `
-    <a class="table-link store-link" href="${item.url}">${useShortLabels ? item.shortLabel : item.label}</a>
-  `).join("");
 
-  const renderTable = (items) => {
-    if (!table) return;
-    table.innerHTML = items.map((project) => `
-      <tr>
-        <td>
-          <a class="project-cell" href="${localPageHref(project)}">
-            ${iconMarkup(project)}
-            <span class="project-copy">
-              <strong>${project.name}</strong>
-              <span>${project.summary}</span>
-            </span>
-          </a>
-        </td>
-        <td>${project.type}</td>
-        <td>
-          <div class="project-links-inline">
-            <a class="table-link" href="${project.repoUrl}">${project.sourceRepo}</a>
-            <a class="table-link" href="${localPageHref(project)}">Pages</a>
-            ${storeLinksMarkup(project)}
-          </div>
-        </td>
-      </tr>
+  const linkMarkup = (project) => {
+    const links = [
+      { label: "Pages", href: localPageHref(project), kind: "primary" },
+      { label: "Repo", href: project.repoUrl, kind: "secondary" },
+      ...(project.storeLinks || []).map((item) => ({
+        label: item.shortLabel,
+        href: item.url,
+        kind: "secondary"
+      }))
+    ];
+
+    return links.map((item) => `
+      <a class="project-link ${item.kind}" href="${item.href}">${item.label}</a>
     `).join("");
   };
 
-  const renderCards = (items) => {
-    if (!cards) return;
-    cards.innerHTML = items.map((project) => `
-      <article class="mobile-project-card">
-        <div class="mobile-card-heading">
-          ${iconMarkup(project)}
-          <h3>${project.name}</h3>
-        </div>
+  const stackMarkup = (project) => project.stack.slice(0, 3).map((item) => `
+    <span>${item}</span>
+  `).join("");
+
+  const projectCard = (project, variant = "") => `
+    <article class="portfolio-card ${variant}">
+      <div class="portfolio-card-top">
+        ${iconMarkup(project)}
+        <span class="project-type">${categoryLabels[project.category] || project.type}</span>
+      </div>
+      <div>
+        <h3>${project.name}</h3>
         <p>${project.summary}</p>
-        <div class="mobile-card-links">
-          <a class="button primary" href="${localPageHref(project)}">Pages</a>
-          <a class="button secondary" href="${project.repoUrl}">참조 레포</a>
-          ${(project.storeLinks || []).map((item) => `<a class="button secondary" href="${item.url}">${item.shortLabel}</a>`).join("")}
-        </div>
-      </article>
-    `).join("");
+      </div>
+      <div class="project-tags">
+        ${stackMarkup(project)}
+      </div>
+      <div class="project-links-inline">
+        ${linkMarkup(project)}
+      </div>
+    </article>
+  `;
+
+  const renderGrid = (items) => {
+    if (!grid) return;
+    grid.innerHTML = items.map((project) => projectCard(project)).join("");
+  };
+
+  const renderFeatured = () => {
+    if (!featuredGrid) return;
+    const items = featuredProjects
+      .map((slug) => projects.find((project) => project.slug === slug))
+      .filter(Boolean);
+    featuredGrid.innerHTML = items.map((project, index) => (
+      projectCard(project, index === 0 ? "featured-card" : "")
+    )).join("");
   };
 
   const render = (category) => {
-    const items = byCategory(category);
-    renderTable(items);
-    renderCards(items);
+    renderGrid(byCategory(category));
   };
 
-  document.querySelector("[data-project-count]").textContent = String(projects.length);
-  document.querySelector("[data-app-count]").textContent = String(projects.filter((project) => project.category === "app" || project.category === "automation").length);
-  document.querySelector("[data-site-count]").textContent = String(projects.filter((project) => project.category === "site" || project.category === "data").length);
+  const setCount = (selector, value) => {
+    const target = document.querySelector(selector);
+    if (target) target.textContent = String(value);
+  };
+
+  setCount("[data-project-count]", projects.length);
+  setCount("[data-app-count]", projects.filter((project) => project.category === "app" || project.category === "automation").length);
+  setCount("[data-site-count]", projects.filter((project) => project.category === "site" || project.category === "data").length);
 
   filters.forEach((button) => {
     button.addEventListener("click", () => {
-      filters.forEach((item) => item.classList.remove("active"));
+      filters.forEach((item) => {
+        item.classList.remove("active");
+        item.setAttribute("aria-pressed", "false");
+      });
       button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
       render(button.dataset.filter);
     });
   });
 
+  filters.forEach((button) => {
+    button.setAttribute("aria-pressed", button.classList.contains("active") ? "true" : "false");
+  });
+
+  renderFeatured();
   render("all");
 })();
