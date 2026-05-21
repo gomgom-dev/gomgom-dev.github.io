@@ -151,8 +151,8 @@ window.GOMGOM_PROJECTS = [
     name: "porta",
     mark: "PT",
     icon: "assets/icons/porta.png",
-    type: "macOS Automation",
-    category: "automation",
+    type: "macOS App",
+    category: "app",
     summary: "Codex와 로컬 macOS 프로젝트를 원격으로 관리하는 Python/Telegram 기반 매니저입니다.",
     description: "porta는 Codex 작업, 로컬 프로젝트, Telegram 명령을 연결하는 원격 제어 매니저입니다. 대표 페이지에서는 운영 대상과 자동화 링크를 명확히 분리합니다.",
     highlights: [
