@@ -243,27 +243,5 @@ window.GOMGOM_PROJECTS = [
     pagePath: "./ai-news/",
     supportUrl: "https://github.com/jhny-kor/AI-News/issues",
     policyUrl: "./privacy-policy/"
-  },
-  {
-    slug: "porta-pages",
-    name: "porta-pages",
-    mark: "PP",
-    type: "Support Pages",
-    category: "site",
-    summary: "porta App Store listing을 위한 지원 및 개인정보 페이지 모음입니다.",
-    description: "porta-pages는 앱스토어 제출에 필요한 support, privacy 문서를 제공하는 HTML 기반 레포입니다. 대표 페이지에서는 정책성 문서 프로젝트로 분리합니다.",
-    highlights: [
-      "App Store listing 지원 페이지",
-      "Privacy 문서와 지원 채널 관리",
-      "HTML 기반 정적 페이지",
-      "앱 제출용 문서 레포"
-    ],
-    stack: ["HTML", "Support", "Privacy", "App Store"],
-    sourceRepo: "jhny-kor/porta-pages",
-    repoUrl: "https://github.com/jhny-kor/porta-pages",
-    referenceUrl: "https://github.com/jhny-kor/porta-pages",
-    pagePath: "./porta-pages/",
-    supportUrl: "https://github.com/jhny-kor/porta-pages/issues",
-    policyUrl: "./privacy-policy/"
   }
 ];

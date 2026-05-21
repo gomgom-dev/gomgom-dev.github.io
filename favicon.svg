@@ -1,4 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#111315"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#ffffff">g</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gom Gomi">
+  <defs>
+    <linearGradient id="bg" x1="10" x2="54" y1="8" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#121a3a"/>
+      <stop offset="1" stop-color="#0b1028"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="12" x2="52" y1="16" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff93c7"/>
+      <stop offset="0.55" stop-color="#ffc27a"/>
+      <stop offset="1" stop-color="#7cf7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <circle cx="22" cy="26" r="9" fill="url(#glow)" opacity="0.95"/>
+  <circle cx="42" cy="26" r="9" fill="url(#glow)" opacity="0.95"/>
+  <circle cx="32" cy="34" r="19" fill="url(#glow)"/>
+  <circle cx="25" cy="32" r="3.2" fill="#111827"/>
+  <circle cx="39" cy="32" r="3.2" fill="#111827"/>
+  <path d="M29 39c1.6 2 4.4 2 6 0" fill="none" stroke="#111827" stroke-linecap="round" stroke-width="2.6"/>
+  <path d="M15 15c10-5 24-6 34-2" fill="none" stroke="#9ff7ff" stroke-linecap="round" stroke-width="3"/>
+  <path d="M14 19c10-5 25-5 36 0" fill="none" stroke="#ff8ed2" stroke-linecap="round" stroke-width="3"/>
 </svg>
