@@ -8,13 +8,19 @@
 
   const pagePrefix = "../";
   const localPath = `${pagePrefix}${project.slug}/`;
-  const policyHref = project.policyUrl && project.policyUrl.startsWith("http")
-    ? project.policyUrl
-    : pagePrefix + "privacy-policy/";
+  const policyHref = (() => {
+    if (!project.policyUrl) return pagePrefix + "privacy-policy/";
+    if (project.policyUrl.startsWith("http") || project.policyUrl.startsWith("../")) return project.policyUrl;
+    if (project.policyUrl.startsWith("#")) return pagePrefix + "privacy-policy/" + project.policyUrl;
+    return pagePrefix + "privacy-policy/";
+  })();
   const heroIcon = project.icon
     ? `<img class="project-hero-icon" src="../${project.icon}" alt="">`
     : `<span class="project-hero-mark" aria-hidden="true">${project.mark}</span>`;
   const storeLinks = project.storeLinks || [];
+  const liveLinks = project.liveUrl
+    ? [{ label: project.liveLabel || "서비스 바로가기", shortLabel: project.liveShortLabel || "Live", url: project.liveUrl }]
+    : [];
 
   document.title = `${project.name} | gomgom.dev`;
   const description = document.querySelector('meta[name="description"]');
@@ -22,11 +28,18 @@
 
   const linkItems = [
     { label: "프로젝트 홈", href: localPath },
+    ...liveLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "참조 레포", href: project.repoUrl },
     { label: "참조 Pages", href: project.referenceUrl },
     ...storeLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "지원 / Issues", href: project.supportUrl },
     { label: "Privacy", href: policyHref }
+  ].filter((item) => item.href);
+  const heroActions = [
+    ...liveLinks.map((item) => ({ label: item.shortLabel, href: item.url, kind: "primary" })),
+    { label: "GitHub 레포", href: project.repoUrl, kind: liveLinks.length ? "secondary" : "primary" },
+    { label: "참조 페이지", href: project.referenceUrl, kind: "secondary" },
+    ...storeLinks.map((item) => ({ label: item.shortLabel, href: item.url, kind: "secondary" }))
   ].filter((item) => item.href);
 
   const related = projects
@@ -41,9 +54,7 @@
         <h1>${project.name}</h1>
         <p>${project.summary}</p>
         <div class="hero-actions">
-          <a class="button primary" href="${project.repoUrl}">GitHub 레포</a>
-          <a class="button secondary" href="${project.referenceUrl}">참조 페이지</a>
-          ${storeLinks.map((item) => `<a class="button secondary" href="${item.url}">${item.shortLabel}</a>`).join("")}
+          ${heroActions.map((item) => `<a class="button ${item.kind}" href="${item.href}">${item.label}</a>`).join("")}
         </div>
       </div>
       <aside class="project-meta-panel" aria-label="프로젝트 메타 정보">

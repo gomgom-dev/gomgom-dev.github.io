@@ -35,6 +35,50 @@ window.GOMGOM_PROJECTS = [
     policyUrl: "../privacy-policy/"
   },
   {
+    slug: "my-shoebox",
+    name: "My Shoebox",
+    mark: "MS",
+    type: "Web / Mobile App",
+    category: "app",
+    summary: "가족이나 팀이 함께 신발 위치, 사진, 공개 신발장, 구성원 권한을 관리하는 신발장 정리 앱입니다.",
+    description: "My Shoebox는 신발장과 신발 사진을 등록하고, 구역과 칸 단위로 보관 위치를 관리하며, 공개 신발장은 방문자도 둘러볼 수 있도록 만든 Expo / Supabase 기반 앱입니다. 운영 Web URL은 https://my-shoebox.vercel.app 입니다.",
+    highlights: [
+      "신발장, 구역, 칸, 신발, 사진 기반 보관 위치 관리",
+      "공개 신발장 조회와 two thumbs up 반응",
+      "구성원 초대, 권한, 대표 신발장 설정",
+      "신고, 운영자 검토, 개인정보 문서 라우트 제공"
+    ],
+    stack: ["Expo", "Supabase", "Vercel", "React Native"],
+    liveUrl: "https://my-shoebox.vercel.app",
+    liveLabel: "My Shoebox Web",
+    liveShortLabel: "Web App",
+    sourceRepo: "jhny-kor/my-shoebox",
+    repoUrl: "https://github.com/jhny-kor/my-shoebox",
+    pagePath: "./my-shoebox/",
+    supportUrl: "https://my-shoebox.vercel.app/support",
+    policyUrl: "https://my-shoebox.vercel.app/legal/privacy"
+  },
+  {
+    slug: "fly-above",
+    name: "fly above",
+    mark: "FA",
+    type: "iOS App",
+    category: "app",
+    summary: "현재 위치 주변의 항공기, 하늘 방향, 관측 기록을 확인하는 SwiftUI 기반 항공 관측 앱입니다.",
+    description: "fly above는 현재 위치를 기준으로 주변 항공기와 하늘 방향을 계산하고, 항공편 검색, 모니터링, 관측 기록을 하나의 iOS 앱 안에서 다루도록 만든 프로젝트입니다.",
+    highlights: [
+      "현재 위치 기준 30km 주변 항공기 탐색",
+      "방향, 거리, 고도각 기반 시야 가능성 계산",
+      "항공편 검색과 모니터링 목록 관리",
+      "관측 기록을 기기 내부에 저장"
+    ],
+    stack: ["SwiftUI", "CoreLocation", "MapKit", "Aviation"],
+    sourceRepo: "local fly above workspace",
+    pagePath: "./fly-above/",
+    supportUrl: "mailto:gomgomi.k.dev@gmail.com",
+    policyUrl: "#fly-above"
+  },
+  {
     slug: "opentax",
     name: "OpenTax",
     mark: "OT",

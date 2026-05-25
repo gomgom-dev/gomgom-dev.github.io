@@ -1,6 +1,6 @@
 (function () {
   const projects = window.GOMGOM_PROJECTS || [];
-  const featuredProjects = ["geulttaogi", "koda", "porta", "opentax"];
+  const featuredProjects = ["my-shoebox", "fly-above", "geulttaogi", "koda", "porta", "opentax"];
   const grid = document.querySelector("[data-project-grid]");
   const featuredGrid = document.querySelector("[data-featured-projects]");
   const filters = Array.from(document.querySelectorAll("[data-filter]"));
@@ -30,13 +30,16 @@
   const linkMarkup = (project) => {
     const links = [
       { label: "Pages", href: localPageHref(project), kind: "primary" },
+      project.liveUrl
+        ? { label: project.liveShortLabel || "Live", href: project.liveUrl, kind: "secondary" }
+        : null,
       { label: "Repo", href: project.repoUrl, kind: "secondary" },
       ...(project.storeLinks || []).map((item) => ({
         label: item.shortLabel,
         href: item.url,
         kind: "secondary"
       }))
-    ];
+    ].filter((item) => item && item.href);
 
     return links.map((item) => `
       <a class="project-link ${item.kind}" href="${item.href}">${item.label}</a>
