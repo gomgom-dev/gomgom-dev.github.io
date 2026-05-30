@@ -1,5 +1,25 @@
 window.GOMGOM_PROJECTS = [
   {
+    slug: "alia",
+    name: "alia",
+    mark: "AL",
+    type: "iOS App",
+    category: "app",
+    summary: "지도를 고르고 도보 경로를 추천받으며, 걸은 길을 GPS로 기록·분석하는 SwiftUI 산책 앱입니다.",
+    description: "alia는 Apple·카카오·네이버·구글 지도 중에서 골라 도보 경로를 추천하고, 자유 기록 모드로 걸은 길을 GPS로 남겨 거리·시간·새로움을 Core ML로 기기 안에서 분석하는 iOS 앱입니다. 모든 학습과 기록은 외부 서버 없이 기기에 저장됩니다.",
+    highlights: [
+      "Apple·카카오·네이버·구글 지도 선택과 도보 경로 추천",
+      "어제와 덜 겹치는 새로운 경로 우선 추천",
+      "출발·도착 없이 걷는 자유 GPS 기록과 분석",
+      "Core ML 온디바이스 학습, 홈 화면 위젯, 실시간 날씨"
+    ],
+    stack: ["SwiftUI", "CoreLocation", "MapKit", "CoreML", "WeatherKit"],
+    sourceRepo: "local alia workspace",
+    pagePath: "./alia/",
+    supportUrl: "mailto:gomgomi.k.dev@gmail.com",
+    policyUrl: "#alia"
+  },
+  {
     slug: "geulttaogi",
     name: "글따오기",
     mark: "GT",
