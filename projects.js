@@ -1,12 +1,13 @@
 window.GOMGOM_PROJECTS = [
   {
     slug: "sairo",
-    name: "SaiRo",
+    name: "사이로",
     mark: "SR",
+    icon: "assets/icons/sairo.png",
     type: "iOS App",
     category: "app",
     summary: "지도를 고르고 도보 경로를 추천받으며, 걸은 길을 GPS로 기록·분석하는 SwiftUI 산책 앱입니다.",
-    description: "SaiRo는 Apple·카카오·네이버·구글 지도 중에서 골라 도보 경로를 추천하고, 자유 기록 모드로 걸은 길을 GPS로 남겨 거리·시간·새로움을 Core ML로 기기 안에서 분석하는 iOS 앱입니다. 모든 학습과 기록은 외부 서버 없이 기기에 저장됩니다.",
+    description: "사이로는 Apple·카카오·네이버·구글 지도 중에서 골라 도보 경로를 추천하고, 자유 기록 모드로 걸은 길을 GPS로 남겨 거리·시간·새로움을 Core ML로 기기 안에서 분석하는 iOS 앱입니다. 모든 학습과 기록은 외부 서버 없이 기기에 저장됩니다.",
     highlights: [
       "Apple·카카오·네이버·구글 지도 선택과 도보 경로 추천",
       "어제와 덜 겹치는 새로운 경로 우선 추천",
@@ -14,7 +15,8 @@ window.GOMGOM_PROJECTS = [
       "Core ML 온디바이스 학습, 홈 화면 위젯, 실시간 날씨"
     ],
     stack: ["SwiftUI", "CoreLocation", "MapKit", "CoreML", "WeatherKit"],
-    sourceRepo: "local SaiRo workspace",
+    sourceRepo: "jhny-kor/novalane",
+    repoUrl: "https://github.com/jhny-kor/novalane",
     pagePath: "./sairo/",
     supportUrl: "mailto:gomgomi.k.dev@gmail.com",
     policyUrl: "#sairo"
@@ -47,7 +49,7 @@ window.GOMGOM_PROJECTS = [
         url: "https://apps.apple.com/kr/app/%EA%B8%80%EB%94%B0%EC%98%A4%EA%B8%B0/id6764681575?mt=12"
       }
     ],
-    sourceRepo: "gomgom-dev/gomgom-dev.github.io",
+    sourceRepo: "local 글따오기 workspace",
     repoUrl: "https://github.com/gomgom-dev/gomgom-dev.github.io/tree/main/geulttaogi",
     referenceUrl: "https://github.com/jhny-kor/jhny-kor.github.io/tree/main/geulttaogi",
     pagePath: "./geulttaogi/",
@@ -56,27 +58,27 @@ window.GOMGOM_PROJECTS = [
   },
   {
     slug: "my-shoebox",
-    name: "My Shoebox",
+    name: "우리 가족의 신발장",
     mark: "MS",
     type: "Web / Mobile App",
     category: "app",
-    summary: "가족이나 팀이 함께 신발 위치, 사진, 공개 신발장, 구성원 권한을 관리하는 신발장 정리 앱입니다.",
-    description: "My Shoebox는 신발장과 신발 사진을 등록하고, 구역과 칸 단위로 보관 위치를 관리하며, 공개 신발장은 방문자도 둘러볼 수 있도록 만든 Expo / Supabase 기반 앱입니다. 운영 Web URL은 https://my-shoebox.vercel.app 입니다.",
+    summary: "가족 코드로 함께 쓰는 신발장과 신발 위치를 관리하는 모바일 브라우저용 웹 MVP입니다.",
+    description: "우리 가족의 신발장은 가족 코드로 같은 Supabase/Postgres 데이터를 공유하고, 정사각형 구역과 칸 단위로 신발 위치를 관리하는 모바일 브라우저용 웹 MVP입니다. 현재 운영 Web URL은 https://shoebox-blue.vercel.app 입니다.",
     highlights: [
       "신발장, 구역, 칸, 신발, 사진 기반 보관 위치 관리",
-      "공개 신발장 조회와 two thumbs up 반응",
-      "구성원 초대, 권한, 대표 신발장 설정",
-      "신고, 운영자 검토, 개인정보 문서 라우트 제공"
+      "가족 코드 기반 공동 신발장 접근",
+      "구역과 칸의 추가, 삭제, 이동 및 소유자 기록",
+      "Next.js API route와 Supabase/Postgres 연동"
     ],
-    stack: ["Expo", "Supabase", "Vercel", "React Native"],
-    liveUrl: "https://my-shoebox.vercel.app",
-    liveLabel: "My Shoebox Web",
-    liveShortLabel: "Web App",
-    sourceRepo: "jhny-kor/my-shoebox",
-    repoUrl: "https://github.com/jhny-kor/my-shoebox",
+    stack: ["Next.js", "Supabase", "Vercel", "TypeScript"],
+    liveUrl: "https://shoebox-blue.vercel.app",
+    liveLabel: "Shoebox Web MVP",
+    liveShortLabel: "Web MVP",
+    sourceRepo: "jhny-kor/shoebox",
+    repoUrl: "https://github.com/jhny-kor/shoebox",
     pagePath: "./my-shoebox/",
-    supportUrl: "https://my-shoebox.vercel.app/support",
-    policyUrl: "https://my-shoebox.vercel.app/legal/privacy"
+    supportUrl: "https://github.com/jhny-kor/shoebox/issues",
+    policyUrl: "../privacy-policy/"
   },
   {
     slug: "fly-above",
@@ -102,6 +104,7 @@ window.GOMGOM_PROJECTS = [
     slug: "opentax",
     name: "OpenTax",
     mark: "OT",
+    icon: "assets/icons/opentax.png",
     type: "Web / MCP",
     category: "site",
     summary: "대한민국 세금, 공제, 정책지원, 신고기한을 검증 가능한 지식 그래프로 묶는 웹 가이드입니다.",
@@ -115,20 +118,20 @@ window.GOMGOM_PROJECTS = [
     stack: ["HTML", "CSS", "JavaScript", "MCP"],
     sourceRepo: "jhny-kor/TaxMeter",
     repoUrl: "https://github.com/jhny-kor/TaxMeter",
-    referenceUrl: "https://github.com/jhny-kor/jhny-kor.github.io/tree/main/opentax",
+    referenceUrl: "https://jhny-kor.github.io/TaxMeter/opentax/",
     pagePath: "./opentax/",
-    externalPage: "https://jhny-kor.github.io/opentax/",
+    externalPage: "https://jhny-kor.github.io/TaxMeter/opentax/",
     supportUrl: "https://github.com/jhny-kor/TaxMeter/issues",
-    policyUrl: "https://jhny-kor.github.io/opentax/privacy.html"
+    policyUrl: "https://jhny-kor.github.io/TaxMeter/opentax/privacy.html"
   },
   {
     slug: "tax-ontology",
-    name: "Tax Ontology",
+    name: "TaxMeter Ontology",
     mark: "TO",
     type: "Data Site",
     category: "data",
-    summary: "TaxMeter가 재사용할 수 있는 대한민국 세금 온톨로지와 데이터 흐름을 설명하는 사이트입니다.",
-    description: "세목, 제도, 용어, 기한, 출처를 ID 기반 노드로 나누고 앱, MCP, 웹에서 같은 데이터를 쓰도록 안내하는 온톨로지 페이지입니다.",
+    summary: "세금, 지원금, 금융상품을 같은 기준으로 연결하는 TaxMeter 공개 온톨로지 허브입니다.",
+    description: "TaxMeter Ontology는 OpenTax와 OpenFin을 하나의 공개 데이터 표면으로 묶고, 앱과 MCP가 같은 manifest와 출처를 읽도록 연결하는 허브입니다.",
     highlights: [
       "국세와 지방세 카테고리의 구조화",
       "정책지원과 사업자 세무 흐름 연결",
@@ -136,12 +139,12 @@ window.GOMGOM_PROJECTS = [
       "TaxMeter 기능과 데이터 노드의 매핑 기반"
     ],
     stack: ["Ontology", "JSON", "Graph", "Tax"],
-    sourceRepo: "jhny-kor/jhny-kor.github.io",
-    repoUrl: "https://github.com/jhny-kor/jhny-kor.github.io/tree/main/tax-ontology",
-    referenceUrl: "https://jhny-kor.github.io/tax-ontology/",
+    sourceRepo: "jhny-kor/TaxMeter",
+    repoUrl: "https://github.com/jhny-kor/TaxMeter",
+    referenceUrl: "https://jhny-kor.github.io/TaxMeter/",
     pagePath: "./tax-ontology/",
     supportUrl: "https://github.com/jhny-kor/TaxMeter/issues",
-    policyUrl: "https://jhny-kor.github.io/opentax/privacy.html"
+    policyUrl: "https://jhny-kor.github.io/TaxMeter/opentax/privacy.html"
   },
   {
     slug: "taxmeter",
@@ -150,20 +153,63 @@ window.GOMGOM_PROJECTS = [
     icon: "assets/icons/taxmeter.png",
     type: "Tax App",
     category: "app",
-    summary: "세금 기준, 위험 신호, 절세 체크리스트를 앱 표면으로 제공하기 위한 Python 기반 프로젝트입니다.",
-    description: "TaxMeter는 OpenTax와 Tax Ontology의 데이터 표면을 실제 사용자 기능으로 연결하는 세금 도구 프로젝트입니다. 현재 대표 페이지에서는 레포, 온톨로지, 지원 경로를 한곳에 묶습니다.",
+    summary: "소득·지출·자산과 제도 기준선을 비교해 세금·복지 정보를 탐색하는 iOS 앱 프로젝트입니다.",
+    description: "TaxMeter는 사용자의 소득·지출·자산과 제도 기준선을 비교하고, OpenTax와 OpenFin의 검증 가능한 데이터를 앱 기능으로 연결하는 iOS 세금·복지 네비게이터입니다.",
     highlights: [
       "세금 기준과 공식 출처 기반 설명",
       "OpenTax 온톨로지와 앱 기능 연결",
-      "Python 기반 데이터 처리 흐름",
+      "SwiftUI iOS 앱과 JSON/MCP 데이터 표면",
       "이슈 트래커를 통한 기준 누락 및 오류 접수"
     ],
-    stack: ["Python", "Tax", "OpenTax", "Data"],
+    stack: ["SwiftUI", "iOS", "OpenTax", "OpenFin"],
     sourceRepo: "jhny-kor/TaxMeter",
     repoUrl: "https://github.com/jhny-kor/TaxMeter",
     referenceUrl: "https://github.com/jhny-kor/TaxMeter",
     pagePath: "./taxmeter/",
     supportUrl: "https://github.com/jhny-kor/TaxMeter/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "openfin",
+    name: "OpenFin",
+    mark: "OF",
+    type: "Web / MCP",
+    category: "data",
+    summary: "세금, 지원금, 카드, 은행, 보험 데이터를 하나의 금융 온톨로지로 묶는 공개 탐색면입니다.",
+    description: "OpenFin은 TaxMeter의 금융 통합 온톨로지로, 검색·탐색·비교·추천 결과와 출처를 같은 manifest에서 확인하고 GitHub Pages와 MCP로 제공합니다.",
+    highlights: [
+      "세금·지원금·카드·은행·보험 도메인 통합",
+      "manifest, 샤드 인덱스, 기준일과 출처 노출",
+      "OpenFin Explorer와 Cloudflare MCP 연결",
+      "조건 기반 금융상품 비교와 추천 표면"
+    ],
+    stack: ["HTML", "JSON", "MCP", "Cloudflare"],
+    sourceRepo: "jhny-kor/TaxMeter",
+    repoUrl: "https://github.com/jhny-kor/TaxMeter",
+    referenceUrl: "https://jhny-kor.github.io/TaxMeter/openfin/",
+    pagePath: "./openfin/",
+    supportUrl: "https://github.com/jhny-kor/TaxMeter/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "open-trader",
+    name: "OpenTrader",
+    mark: "OT",
+    type: "Trading Platform",
+    category: "automation",
+    summary: "Toss를 실거래 브로커로 연결하고 KIS를 조회·보조 데이터에 사용하는 로컬 주식 운영 도구입니다.",
+    description: "OpenTrader는 한국·미국 주식 시세 수집, 종목 분석, 수동 주문, 자동매매, 주문 복구와 Telegram 알림을 하나의 로컬 운영 화면으로 묶습니다.",
+    highlights: [
+      "Toss·KIS 계좌, 보유자산, 주문, 체결 조회",
+      "한국·미국 종목 마스터와 1분 시세 수집",
+      "dry-run, readiness, 리스크 사전검증 중심 주문 흐름",
+      "공모주·뉴스·공시·분석 리포트와 Telegram 알림"
+    ],
+    stack: ["Python", "Toss OpenAPI", "KIS API", "Telegram"],
+    sourceRepo: "jhny-kor/OpenTrader",
+    repoUrl: "https://github.com/jhny-kor/OpenTrader",
+    pagePath: "./open-trader/",
+    supportUrl: "https://github.com/jhny-kor/OpenTrader/issues",
     policyUrl: "./privacy-policy/"
   },
   {
@@ -263,15 +309,15 @@ window.GOMGOM_PROJECTS = [
     icon: "assets/icons/koda.png",
     type: "Security App",
     category: "app",
-    summary: "보안 점검과 스캐닝 도구를 다루는 Swift 기반 프로젝트입니다.",
-    description: "KODA는 security scanner와 security tools 토픽을 가진 보안 점검 프로젝트입니다. 대표 페이지에서는 저장소, 목적, 지원 경로를 간결하게 제공합니다.",
+    summary: "KODA(Korean On-Device Auditor)는 로컬 환경에서 보안 점검과 스캐닝을 수행하는 보안 도구입니다.",
+    description: "KODA는 on-device·on-premise 보안 점검, 품질 게이트, 스캐닝과 리포트 생성을 제공하는 프로젝트입니다. macOS 앱과 Python 대시보드, CLI 사용 흐름을 함께 연결합니다.",
     highlights: [
       "KODA 보안 점검 프로젝트",
-      "Swift 기반 보안 도구 표면",
+      "macOS 앱, Python 대시보드, CLI 흐름",
       "security-scanner, security-tools 토픽",
       "이슈 기반 개선 요청 연결"
     ],
-    stack: ["Swift", "Security", "Scanner", "Tooling"],
+    stack: ["Python", "Swift", "Security", "Scanner"],
     storeLinks: [
       {
         label: "macOS App Store",
@@ -284,6 +330,69 @@ window.GOMGOM_PROJECTS = [
     referenceUrl: "https://github.com/jhny-kor/sec-chk",
     pagePath: "./koda/",
     supportUrl: "https://github.com/jhny-kor/sec-chk/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "muma",
+    name: "MuMA",
+    mark: "MM",
+    type: "macOS App",
+    category: "app",
+    summary: "프롬프트 기반 생성, 오디오 편집, 스템 분리, 믹싱을 연결하는 네이티브 AI 음악 워크스테이션입니다.",
+    description: "MuMA는 SwiftUI/AppKit과 C++20 오디오 코어를 기반으로, AI 생성 작업과 타임라인 편집, 녹음, 스템 분리, 렌더링을 하나의 macOS 앱에서 다루는 프로젝트입니다.",
+    highlights: [
+      "프롬프트 생성과 Suno·ACE-Step 호환 provider",
+      "웨이브폼 타임라인, 녹음, 분할·트림·믹싱",
+      "Demucs 기반 ML-first stem separation",
+      "CoreAudio, C++ DSP, 캐시 기반 고속 렌더링"
+    ],
+    stack: ["SwiftUI", "AppKit", "C++20", "CoreAudio", "AI"],
+    sourceRepo: "jhny-kor/MuMA",
+    repoUrl: "https://github.com/jhny-kor/MuMA",
+    pagePath: "./muma/",
+    supportUrl: "https://github.com/jhny-kor/MuMA/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "owntology-kit",
+    name: "OWNtology Kit",
+    mark: "OK",
+    type: "macOS Utility",
+    category: "automation",
+    summary: "카카오톡, SMS, 메일, 메모, Safari 탭과 GitHub 스타를 개인 온톨로지 볼트로 수집하는 로컬 킷입니다.",
+    description: "OWNtology Kit은 개인 기록을 기기 밖으로 보내지 않고 Markdown 기반 볼트로 보존하며, 웹 설정 화면과 원터치 수집·온톨로지화·MCP 연결을 제공합니다.",
+    highlights: [
+      "카카오톡·SMS·메일·Apple 메모·Safari 탭 수집",
+      "수집 원문과 변환된 지식 노트 분리",
+      "웹에서 수집 소스와 개인정보 필드 제어",
+      "로컬 MCP와 선택적 원격 볼트 미러링"
+    ],
+    stack: ["Python", "macOS", "Markdown", "MCP"],
+    sourceRepo: "jhny-kor/OWNtology-Kit",
+    repoUrl: "https://github.com/jhny-kor/OWNtology-Kit",
+    pagePath: "./owntology-kit/",
+    supportUrl: "https://github.com/jhny-kor/OWNtology-Kit/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "ghwpx",
+    name: "gHwpx",
+    mark: "HW",
+    type: "Python CLI",
+    category: "automation",
+    summary: "HWPX 템플릿의 문단 서식을 유지하면서 표식과 입력값으로 새 공문서를 생성하는 도구입니다.",
+    description: "gHwpx는 기존 한/글 HWPX를 템플릿으로 보존하고, {{body}} 같은 표식만 바꿔 같은 양식의 문서를 안정적으로 생성하는 Python CLI입니다.",
+    highlights: [
+      "HWPX XML과 템플릿 문단 서식 보존",
+      "인라인 필드와 여러 문단 본문 표식 지원",
+      "원본을 덮어쓰지 않는 mark·render 흐름",
+      "대화형 wizard와 템플릿 inspect/list 명령"
+    ],
+    stack: ["Python", "HWPX", "XML", "CLI"],
+    sourceRepo: "jhny-kor/gHwpx",
+    repoUrl: "https://github.com/jhny-kor/gHwpx",
+    pagePath: "./ghwpx/",
+    supportUrl: "https://github.com/jhny-kor/gHwpx/issues",
     policyUrl: "./privacy-policy/"
   },
   {

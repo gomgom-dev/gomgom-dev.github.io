@@ -28,17 +28,17 @@
 
   const linkItems = [
     { label: "프로젝트 홈", href: localPath },
-    ...liveLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "참조 레포", href: project.repoUrl },
+    ...liveLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "참조 Pages", href: project.referenceUrl },
     ...storeLinks.map((item) => ({ label: item.label, href: item.url })),
     { label: "지원 / Issues", href: project.supportUrl },
     { label: "Privacy", href: policyHref }
   ].filter((item) => item.href);
   const heroActions = [
-    ...liveLinks.map((item) => ({ label: item.shortLabel, href: item.url, kind: "primary" })),
-    { label: "GitHub 레포", href: project.repoUrl, kind: liveLinks.length ? "secondary" : "primary" },
+    { label: "GitHub 레포", href: project.repoUrl, kind: "primary" },
     { label: "참조 페이지", href: project.referenceUrl, kind: "secondary" },
+    ...liveLinks.map((item) => ({ label: item.shortLabel, href: item.url, kind: "secondary" })),
     ...storeLinks.map((item) => ({ label: item.shortLabel, href: item.url, kind: "secondary" }))
   ].filter((item) => item.href);
 

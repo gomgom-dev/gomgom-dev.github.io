@@ -181,6 +181,13 @@ main {
   box-shadow: var(--shadow);
 }
 
+.hero-brand-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
 .hero-panel strong {
   font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
   font-size: 19px;
