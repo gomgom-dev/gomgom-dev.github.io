@@ -5,6 +5,80 @@
   const featuredGrid = document.querySelector("[data-featured-projects]");
   const filters = Array.from(document.querySelectorAll("[data-filter]"));
 
+  const initHeroGallery = () => {
+    const gallery = document.querySelector("[data-hero-gallery]");
+    if (!gallery) return;
+
+    const slides = Array.from(gallery.querySelectorAll(".hero-gallery-slide"));
+    const previousButton = gallery.querySelector("[data-hero-prev]");
+    const nextButton = gallery.querySelector("[data-hero-next]");
+    const caption = gallery.querySelector("[data-hero-caption]");
+    const count = gallery.querySelector("[data-hero-count]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let activeIndex = 0;
+    let rotationTimer = null;
+
+    const loadSlide = (slide) => {
+      if (!slide.getAttribute("src") && slide.dataset.src) {
+        slide.setAttribute("src", slide.dataset.src);
+      }
+    };
+
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+      const activeSlide = slides[activeIndex];
+      loadSlide(activeSlide);
+
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle("active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      if (caption) caption.textContent = activeSlide.dataset.title || "대표 이미지";
+      if (count) count.textContent = `${activeIndex + 1} / ${slides.length}`;
+
+      window.setTimeout(() => {
+        loadSlide(slides[(activeIndex + 1) % slides.length]);
+      }, 700);
+    };
+
+    const stopRotation = () => {
+      if (rotationTimer) window.clearInterval(rotationTimer);
+      rotationTimer = null;
+    };
+
+    const startRotation = () => {
+      stopRotation();
+      if (reducedMotion.matches || document.hidden || gallery.contains(document.activeElement)) return;
+      rotationTimer = window.setInterval(() => showSlide(activeIndex + 1), 5000);
+    };
+
+    const move = (offset) => {
+      showSlide(activeIndex + offset);
+      startRotation();
+    };
+
+    previousButton?.addEventListener("click", () => move(-1));
+    nextButton?.addEventListener("click", () => move(1));
+    gallery.addEventListener("mouseenter", stopRotation);
+    gallery.addEventListener("mouseleave", startRotation);
+    gallery.addEventListener("focusin", stopRotation);
+    gallery.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        if (!gallery.contains(document.activeElement)) startRotation();
+      }, 0);
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopRotation();
+      else startRotation();
+    });
+    reducedMotion.addEventListener?.("change", startRotation);
+
+    showSlide(0);
+    startRotation();
+  };
+
   const categoryLabels = {
     app: "App",
     site: "Site",
@@ -116,6 +190,7 @@
     if (target) target.textContent = String(value);
   };
 
+  initHeroGallery();
   setCount("[data-project-count]", projects.length);
   setCount("[data-app-count]", projects.filter((project) => project.category === "app" || project.category === "automation").length);
   setCount("[data-site-count]", projects.filter((project) => project.category === "site" || project.category === "data").length);
