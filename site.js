@@ -19,13 +19,31 @@
 
   const localPageHref = (project) => project.pagePath.replace("./", "");
 
-  const iconMarkup = (project) => {
-    if (project.icon) {
-      return `<img class="app-icon" src="./${project.icon}" alt="">`;
+  const mediaMarkup = (project) => {
+    if (project.image) {
+      return `
+        <div class="project-media project-media-screen">
+          <img src="./${project.image}" alt="${project.name} 대표 화면" loading="lazy">
+        </div>
+      `;
     }
 
-    return `<span class="project-icon" aria-hidden="true">${project.mark}</span>`;
+    if (project.icon) {
+      return `
+        <div class="project-media project-media-icon">
+          <img src="./${project.icon}" alt="${project.name} 앱 아이콘" loading="lazy">
+        </div>
+      `;
+    }
+
+    return "";
   };
+
+  const fallbackIconMarkup = (project) => (
+    project.image || project.icon
+      ? ""
+      : `<span class="project-icon" aria-hidden="true">${project.mark}</span>`
+  );
 
   const linkMarkup = (project) => {
     const links = [
@@ -50,10 +68,14 @@
     <span>${item}</span>
   `).join("");
 
-  const projectCard = (project, variant = "") => `
-    <article class="portfolio-card ${variant}">
-      <div class="portfolio-card-top">
-        ${iconMarkup(project)}
+  const projectCard = (project, variant = "") => {
+    const hasMedia = Boolean(project.image || project.icon);
+
+    return `
+    <article class="portfolio-card ${variant} ${hasMedia ? "has-media" : "no-media"}">
+      ${mediaMarkup(project)}
+      <div class="portfolio-card-top ${hasMedia ? "has-media" : ""}">
+        ${fallbackIconMarkup(project)}
         <span class="project-type">${categoryLabels[project.category] || project.type}</span>
       </div>
       <div>
@@ -68,6 +90,7 @@
       </div>
     </article>
   `;
+  };
 
   const renderGrid = (items) => {
     if (!grid) return;

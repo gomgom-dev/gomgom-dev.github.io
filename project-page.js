@@ -17,6 +17,9 @@
   const heroIcon = project.icon
     ? `<img class="project-hero-icon" src="../${project.icon}" alt="">`
     : `<span class="project-hero-mark" aria-hidden="true">${project.mark}</span>`;
+  const showcase = project.image
+    ? `<figure class="project-showcase"><img src="../${project.image}" alt="${project.name} 대표 화면"></figure>`
+    : "";
   const storeLinks = project.storeLinks || [];
   const liveLinks = project.liveUrl
     ? [{ label: project.liveLabel || "서비스 바로가기", shortLabel: project.liveShortLabel || "Live", url: project.liveUrl }]
@@ -68,6 +71,7 @@
 
     <section class="section project-detail-grid">
       <div>
+        ${showcase}
         <article class="content-block">
           <h2>Overview</h2>
           <p>${project.description}</p>
