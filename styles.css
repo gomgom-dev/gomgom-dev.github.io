@@ -11,6 +11,8 @@
   --strong-line: #18181b;
   --accent: #2563eb;
   --accent-soft: #dbeafe;
+  --active: #15803d;
+  --active-soft: #dcfce7;
   --shadow: 0 18px 42px rgba(9, 9, 11, 0.08);
   --radius: 8px;
   --max: 1180px;
@@ -186,13 +188,81 @@ main {
   font-size: 19px;
 }
 
-.hero-panel > span {
-  display: block;
-  padding: 11px 0;
+.current-project-list {
+  display: grid;
   border-top: 1px solid var(--line);
-  color: var(--muted);
+}
+
+.current-project {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 18px;
+  gap: 11px;
+  align-items: center;
+  min-width: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.current-project:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.current-project-visual {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.current-project-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.current-project-visual.is-screen img {
+  object-position: left center;
+}
+
+.current-project-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.current-project-copy strong {
+  overflow: hidden;
+  font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
   font-size: 14px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current-project-copy small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
   font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current-project > svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .hero-gallery {
@@ -465,6 +535,42 @@ main {
   justify-content: flex-end;
 }
 
+.project-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0 8px;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  background: var(--active-soft);
+  color: var(--active);
+  font-size: 11px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.project-status > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.featured-card .project-status {
+  border-color: rgba(134, 239, 172, 0.35);
+  background: rgba(22, 163, 74, 0.18);
+  color: #bbf7d0;
+}
+
 .project-icon {
   flex: 0 0 auto;
   width: 48px;
@@ -551,6 +657,12 @@ main {
 .table-link:hover {
   border-color: var(--accent);
   background: var(--accent-soft);
+}
+
+.project-link[href^="http"]::after {
+  content: "↗";
+  margin-left: 5px;
+  font-size: 11px;
 }
 
 .filter-bar {
@@ -1023,7 +1135,7 @@ main {
 
   .hero-section .hero-copy p,
   .hero-section .hero-panel {
-    width: min(100%, 280px);
+    width: 100%;
   }
 
   .summary-strip,
@@ -1048,11 +1160,6 @@ main {
 
   .portfolio-card {
     min-height: 0;
-  }
-
-  .portfolio-card-top {
-    align-items: flex-start;
-    flex-direction: column;
   }
 
   .contact-section h2 {

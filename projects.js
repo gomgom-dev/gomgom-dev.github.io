@@ -6,6 +6,7 @@ window.GOMGOM_PROJECTS = [
     icon: "assets/icons/sairo.png",
     type: "iOS App",
     category: "app",
+    current: true,
     summary: "지도를 고르고 도보 경로를 추천받으며, 걸은 길을 GPS로 기록·분석하는 SwiftUI 산책 앱입니다.",
     description: "사이로는 Apple·카카오·네이버·구글 지도 중에서 골라 도보 경로를 추천하고, 자유 기록 모드로 걸은 길을 GPS로 남겨 거리·시간·새로움을 Core ML로 기기 안에서 분석하는 iOS 앱입니다. 모든 학습과 기록은 외부 서버 없이 기기에 저장됩니다.",
     highlights: [
@@ -174,22 +175,47 @@ window.GOMGOM_PROJECTS = [
     slug: "openfin",
     name: "OpenFin",
     mark: "OF",
+    icon: "assets/icons/openfin.svg",
     type: "Web / MCP",
     category: "data",
-    summary: "세금, 지원금, 카드, 은행, 보험 데이터를 하나의 금융 온톨로지로 묶는 공개 탐색면입니다.",
-    description: "OpenFin은 TaxMeter의 금융 통합 온톨로지로, 검색·탐색·비교·추천 결과와 출처를 같은 manifest에서 확인하고 GitHub Pages와 MCP로 제공합니다.",
+    current: true,
+    summary: "금융 지식과 상품 데이터를 출처·관계 계약으로 연결하는 읽기 전용 탐색기와 Remote MCP입니다.",
+    description: "OpenFin은 세금, 공공지원, 금융상품, 금융참조, 생활맥락 데이터를 출처와 신선도 기준으로 관리하고 GitHub Pages 탐색기와 Cloudflare Remote MCP로 제공합니다.",
     highlights: [
-      "세금·지원금·카드·은행·보험 도메인 통합",
-      "manifest, 샤드 인덱스, 기준일과 출처 노출",
-      "OpenFin Explorer와 Cloudflare MCP 연결",
-      "조건 기반 금융상품 비교와 추천 표면"
+      "세금·공공지원·금융상품·생활맥락 데이터 연결",
+      "출처, 신선도, 공개등급을 포함한 manifest",
+      "GitHub Pages Explorer와 Cloudflare Remote MCP",
+      "검증 게이트를 통과하지 않은 추천은 비활성화"
     ],
     stack: ["HTML", "JSON", "MCP", "Cloudflare"],
-    sourceRepo: "jhny-kor/TaxMeter",
-    repoUrl: "https://github.com/jhny-kor/TaxMeter",
-    referenceUrl: "https://jhny-kor.github.io/TaxMeter/openfin/",
+    sourceRepo: "jhny-kor/OpenFin",
+    repoUrl: "https://github.com/jhny-kor/OpenFin",
+    referenceUrl: "https://jhny-kor.github.io/OpenFin/",
     pagePath: "./openfin/",
-    supportUrl: "https://github.com/jhny-kor/TaxMeter/issues",
+    supportUrl: "https://github.com/jhny-kor/OpenFin/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
+    slug: "oci-server-kit",
+    name: "OCI Server Kit",
+    mark: "OCI",
+    image: "assets/projects/oci-server-kit.jpg",
+    type: "Cloud Automation Kit",
+    category: "automation",
+    current: true,
+    summary: "OCI 서버, 공개 서비스 포털, 보호된 모니터링 화면을 한 번에 구성하는 초보자용 자동화 킷입니다.",
+    description: "OCI Server Kit은 Terraform과 cloud-init으로 Oracle Cloud 서버와 네트워크를 구성하고, 공개 서비스 포털과 인증된 모니터링 화면을 자동 설치하는 공개 프로젝트입니다. 실제 Apply와 비용 발생은 사용자의 검토와 승인을 전제로 합니다.",
+    highlights: [
+      "Terraform 기반 OCI 네트워크와 서버 구성",
+      "공개 서비스 포털과 인증된 모니터링 화면",
+      "CPU·메모리·디스크·네트워크 24시간 지표",
+      "AI 설치 안내와 Plan 우선 안전 절차"
+    ],
+    stack: ["Terraform", "OCI", "Python", "Nginx"],
+    sourceRepo: "jhny-kor/oci-server-kit",
+    repoUrl: "https://github.com/jhny-kor/oci-server-kit",
+    pagePath: "./oci-server-kit/",
+    supportUrl: "https://github.com/jhny-kor/oci-server-kit/issues",
     policyUrl: "./privacy-policy/"
   },
   {
@@ -199,8 +225,9 @@ window.GOMGOM_PROJECTS = [
     image: "assets/projects/open-trader.png",
     type: "Trading Platform",
     category: "automation",
-    summary: "Toss를 실거래 브로커로 연결하고 KIS를 조회·보조 데이터에 사용하는 로컬 주식 운영 도구입니다.",
-    description: "OpenTrader는 한국·미국 주식 시세 수집, 종목 분석, 수동 주문, 자동매매, 주문 복구와 Telegram 알림을 하나의 로컬 운영 화면으로 묶습니다.",
+    current: true,
+    summary: "실주문은 기본 비활성화하고 dry-run을 우선하며, Toss와 KIS 조회 데이터를 연결하는 로컬 주식 운영 도구입니다.",
+    description: "OpenTrader는 실주문 기본 비활성 상태에서 한국·미국 주식 시세 수집, 종목 분석, 주문 복구와 Telegram 알림을 하나의 로컬 운영 화면으로 묶습니다.",
     highlights: [
       "Toss·KIS 계좌, 보유자산, 주문, 체결 조회",
       "한국·미국 종목 마스터와 1분 시세 수집",
@@ -312,13 +339,14 @@ window.GOMGOM_PROJECTS = [
     icon: "assets/icons/koda.png",
     type: "Security App",
     category: "app",
-    summary: "KODA(Korean On-Device Auditor)는 로컬 환경에서 보안 점검과 스캐닝을 수행하는 보안 도구입니다.",
-    description: "KODA는 on-device·on-premise 보안 점검, 품질 게이트, 스캐닝과 리포트 생성을 제공하는 프로젝트입니다. macOS 앱과 Python 대시보드, CLI 사용 흐름을 함께 연결합니다.",
+    current: true,
+    summary: "소스·설정·의존성·배포 파일을 로컬에서 점검하는 오프라인 우선 보안·품질 스캐너입니다.",
+    description: "KODA는 macOS 네이티브 앱과 Linux·Windows·CI용 Python 엔진으로 소스, 설정, 의존성, 호스트 상태와 배포된 Java 아카이브를 로컬에서 점검합니다. Linux 포털과 폐쇄망 배포 흐름도 함께 제공합니다.",
     highlights: [
-      "KODA 보안 점검 프로젝트",
-      "macOS 앱, Python 대시보드, CLI 흐름",
-      "security-scanner, security-tools 토픽",
-      "이슈 기반 개선 요청 연결"
+      "macOS 앱과 Linux·Windows·CI 공용 스캔 엔진",
+      "소스·설정·의존성·호스트 상태 로컬 점검",
+      "JAR·WAR·EAR 오프라인 SBOM과 취약점 분석",
+      "인증된 Linux 포털과 폐쇄망 설치 가이드"
     ],
     stack: ["Python", "Swift", "Security", "Scanner"],
     storeLinks: [
@@ -336,12 +364,36 @@ window.GOMGOM_PROJECTS = [
     policyUrl: "./privacy-policy/"
   },
   {
+    slug: "koda-sbom-tracker",
+    name: "KODA-SBOM-Tracker",
+    mark: "SB",
+    icon: "assets/icons/koda-sbom-tracker.svg",
+    type: "Security Platform",
+    category: "app",
+    current: true,
+    summary: "KODA와 연동되는 비공개 한국어 SBOM 운영 포털로, 업로드·분석·취약점 데이터·폐쇄망 운영을 한 곳에서 관리합니다.",
+    description: "KODA-SBOM-Tracker는 React 포털, FastAPI API·worker, Dependency-Track, PostgreSQL과 gateway를 묶어 SBOM 업로드·프로젝트·분석·취약점 데이터와 권한·감사 흐름을 운영합니다. KODA 통합본에서는 Tracker가 로그인·세션 원본이 되며 단독 Compose와 폐쇄망 번들도 제공합니다.",
+    highlights: [
+      "CycloneDX SBOM 업로드와 회차·프로젝트 조회",
+      "Dependency-Track 5.0.3 연동과 최소 권한 API 키 검증",
+      "역할·승인·감사 로그 기반 한국어 운영 UI",
+      "Windows 설치파일과 Linux x86_64 폐쇄망 번들"
+    ],
+    stack: ["React", "FastAPI", "Dependency-Track", "PostgreSQL", "Docker"],
+    sourceRepo: "jhny-kor/KODA-SBOM-Tracker",
+    repoUrl: "https://github.com/jhny-kor/KODA-SBOM-Tracker",
+    pagePath: "./koda-sbom-tracker/",
+    supportUrl: "https://github.com/jhny-kor/KODA-SBOM-Tracker/issues",
+    policyUrl: "./privacy-policy/"
+  },
+  {
     slug: "muma",
     name: "MuMA",
     mark: "MM",
     image: "assets/projects/muma.png",
     type: "macOS App",
     category: "app",
+    current: true,
     summary: "프롬프트 기반 생성, 오디오 편집, 스템 분리, 믹싱을 연결하는 네이티브 AI 음악 워크스테이션입니다.",
     description: "MuMA는 SwiftUI/AppKit과 C++20 오디오 코어를 기반으로, AI 생성 작업과 타임라인 편집, 녹음, 스템 분리, 렌더링을 하나의 macOS 앱에서 다루는 프로젝트입니다.",
     highlights: [

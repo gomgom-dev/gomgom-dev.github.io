@@ -1,8 +1,9 @@
 (function () {
   const projects = window.GOMGOM_PROJECTS || [];
-  const featuredProjects = ["sairo", "openfin", "open-trader", "muma", "owntology-kit", "koda"];
+  const currentProjects = projects.filter((project) => project.current);
   const grid = document.querySelector("[data-project-grid]");
   const featuredGrid = document.querySelector("[data-featured-projects]");
+  const currentProjectList = document.querySelector("[data-current-projects]");
   const filters = Array.from(document.querySelectorAll("[data-filter]"));
 
   const initHeroGallery = () => {
@@ -105,7 +106,7 @@
     if (project.icon) {
       return `
         <div class="project-media project-media-icon">
-          <img src="./${project.icon}" alt="${project.name} 앱 아이콘" loading="lazy">
+          <img src="./${project.icon}" alt="${project.name} 아이콘" loading="lazy">
         </div>
       `;
     }
@@ -117,6 +118,12 @@
     project.image || project.icon
       ? ""
       : `<span class="project-icon" aria-hidden="true">${project.mark}</span>`
+  );
+
+  const statusMarkup = (project) => (
+    project.current
+      ? '<span class="project-status"><span aria-hidden="true"></span>진행 중</span>'
+      : ""
   );
 
   const linkMarkup = (project) => {
@@ -134,7 +141,7 @@
     ].filter((item) => item && item.href);
 
     return links.map((item) => `
-      <a class="project-link ${item.kind}" href="${item.href}">${item.label}</a>
+      <a class="project-link ${item.kind}" href="${item.href}" aria-label="${project.name} ${item.label}">${item.label}</a>
     `).join("");
   };
 
@@ -150,7 +157,10 @@
       ${mediaMarkup(project)}
       <div class="portfolio-card-top ${hasMedia ? "has-media" : ""}">
         ${fallbackIconMarkup(project)}
-        <span class="project-type">${categoryLabels[project.category] || project.type}</span>
+        <div class="project-card-meta">
+          ${statusMarkup(project)}
+          <span class="project-type">${categoryLabels[project.category] || project.type}</span>
+        </div>
       </div>
       <div>
         <h3>${project.name}</h3>
@@ -173,12 +183,28 @@
 
   const renderFeatured = () => {
     if (!featuredGrid) return;
-    const items = featuredProjects
-      .map((slug) => projects.find((project) => project.slug === slug))
-      .filter(Boolean);
-    featuredGrid.innerHTML = items.map((project, index) => (
+    featuredGrid.innerHTML = currentProjects.map((project, index) => (
       projectCard(project, index === 0 ? "featured-card" : "")
     )).join("");
+  };
+
+  const renderCurrentProjects = () => {
+    if (!currentProjectList) return;
+    currentProjectList.innerHTML = currentProjects.map((project) => {
+      const visual = project.icon || project.image;
+      return `
+        <a class="current-project" href="${localPageHref(project)}" aria-label="${project.name} 프로젝트 보기">
+          <span class="current-project-visual ${project.image ? "is-screen" : ""}" aria-hidden="true">
+            ${visual ? `<img src="./${visual}" alt="" loading="lazy" decoding="async">` : project.mark}
+          </span>
+          <span class="current-project-copy">
+            <strong>${project.name}</strong>
+            <small>${project.type}</small>
+          </span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6m-6 0h6v6"/></svg>
+        </a>
+      `;
+    }).join("");
   };
 
   const render = (category) => {
@@ -212,5 +238,6 @@
   });
 
   renderFeatured();
+  renderCurrentProjects();
   render("all");
 })();

@@ -63,6 +63,7 @@
       <aside class="project-meta-panel" aria-label="프로젝트 메타 정보">
         <dl>
           <div><dt>Type</dt><dd>${project.type}</dd></div>
+          ${project.current ? '<div><dt>Status</dt><dd><span class="project-status"><span aria-hidden="true"></span>진행 중</span></dd></div>' : ""}
           <div><dt>Source</dt><dd>${project.sourceRepo}</dd></div>
           <div><dt>Folder</dt><dd>/${project.slug}/</dd></div>
         </dl>

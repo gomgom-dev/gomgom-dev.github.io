@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">KODA SBOM Tracker</title>
+  <desc id="desc">A shield containing a layered SBOM package symbol</desc>
+  <defs>
+    <linearGradient id="shield" x1="40" y1="32" x2="216" y2="224" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#d8f8ff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="82" y1="82" x2="178" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18d4e5"/>
+      <stop offset="1" stop-color="#0096c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="#031b4e"/>
+  <path d="M128 32 52 62v58c0 49 30 83 76 104 46-21 76-55 76-104V62l-76-30Z" fill="none" stroke="url(#shield)" stroke-width="14" stroke-linejoin="round"/>
+  <path d="m88 102 40-20 40 20-40 20-40-20Zm0 26 40 20 40-20m-80 26 40 20 40-20" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="88" cy="102" r="6" fill="#fff"/>
+  <circle cx="168" cy="102" r="6" fill="#fff"/>
+</svg>
