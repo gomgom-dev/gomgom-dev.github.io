@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gomgom interactive concept</title>
+  <meta name="description" content="gomgom.dev 인터랙티브 포트폴리오 콘셉트 샘플">
+  <link rel="icon" href="../assets/favicon-32.png?v=20260521-2" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="./concept.css">
+</head>
+<body data-asset-base="../">
+  <div class="concept-shell">
+    <header class="concept-header">
+      <a class="concept-brand" href="../" aria-label="gomgom.dev 홈">
+        <span class="brand-mark" aria-hidden="true">g</span>
+        <span>gomgom.dev</span>
+        <small>interactive concept</small>
+      </a>
+      <nav class="limelight-nav" aria-label="콘셉트 섹션">
+        <span class="limelight-indicator" aria-hidden="true"></span>
+        <button class="limelight-item active" type="button" data-target="top">Home</button>
+        <button class="limelight-item" type="button" data-target="work">Work</button>
+        <button class="limelight-item" type="button" data-target="archive">Archive</button>
+        <button class="limelight-item" type="button" data-target="approach">Approach</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="concept-hero" id="top" data-section="top">
+        <div class="hero-copy">
+          <h1>Projects with<br><em>a little orbit.</em></h1>
+          <p class="hero-lede">프로젝트를 나열하는 대신, 지금 움직이는 작업을 한 바퀴씩 탐색하는 포트폴리오입니다.</p>
+          <div class="hero-actions">
+            <button class="concept-button primary" type="button" data-scroll-to="work">
+              프로젝트 둘러보기
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 19V9M19 19H9"></path></svg>
+            </button>
+            <a class="concept-button ghost" href="../">
+              기존 사이트 보기
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"></path></svg>
+            </a>
+          </div>
+          <div class="hero-proof" aria-label="샘플 범위">
+            <span><strong data-concept-project-count>0</strong><small>current projects</small></span>
+            <span><strong>01</strong><small>orbit gallery</small></span>
+            <span>
+              <svg class="proof-symbol" viewBox="0 0 64 32" aria-hidden="true"><path d="M17 6C9 6 4 10 4 16s5 10 13 10c6 0 10-3 15-10 5-7 9-10 15-10 8 0 13 4 13 10s-5 10-13 10c-6 0-10-3-15-10C27 9 23 6 17 6Z"></path></svg>
+              <small>ways to explore</small>
+            </span>
+          </div>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit-halo"></div>
+          <div class="orbit-line orbit-line-one"></div>
+          <div class="orbit-line orbit-line-two"></div>
+          <div class="orbit-core">
+            <span>gomgom</span>
+            <svg class="orbit-symbol" viewBox="0 0 64 32" aria-hidden="true"><path d="M17 6C9 6 4 10 4 16s5 10 13 10c6 0 10-3 15-10 5-7 9-10 15-10 8 0 13 4 13 10s-5 10-13 10c-6 0-10-3-15-10C27 9 23 6 17 6Z"></path></svg>
+            <small>build / test / ship</small>
+          </div>
+          <span class="orbit-dot dot-one"></span>
+          <span class="orbit-dot dot-two"></span>
+          <span class="orbit-dot dot-three"></span>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="work" data-section="work">
+        <div class="section-intro">
+          <p class="eyebrow">02 / WORK</p>
+          <h2>Scroll into the work.</h2>
+          <p>휠, 드래그, 키보드로 프로젝트 사진을 돌려보고 가운데 카드에서 바로 진입합니다.</p>
+        </div>
+
+        <div class="circular-gallery" data-gallery tabindex="0" aria-label="진행 중인 프로젝트 원형 갤러리">
+          <div class="gallery-stage" data-gallery-stage></div>
+          <div class="gallery-center-card">
+            <div class="gallery-center-media" data-gallery-media></div>
+            <div class="gallery-center-copy">
+              <span class="gallery-kicker" data-gallery-type>Project</span>
+              <h3 data-gallery-name>Project</h3>
+              <p data-gallery-summary>Project summary</p>
+              <a class="gallery-open" data-gallery-link href="../">
+                프로젝트 열기
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"></path></svg>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-controls">
+            <button type="button" data-gallery-prev aria-label="이전 프로젝트">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 18-6-6 6-6"></path></svg>
+            </button>
+            <span><b data-gallery-index>01</b> / <span data-gallery-total>07</span></span>
+            <button type="button" data-gallery-next aria-label="다음 프로젝트">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"></path></svg>
+            </button>
+          </div>
+          <p class="gallery-hint">
+            <svg class="hint-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 8l3-3M4 8l3 3M20 16H4m16 0-3-3m3 3-3 3"></path></svg>
+            <span>drag or scroll to explore</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="archive-section" id="archive" data-section="archive">
+        <div class="section-intro compact">
+          <p class="eyebrow">03 / ARCHIVE</p>
+          <h2>Quiet proof, close at hand.</h2>
+          <p>기존 Archive는 카드형 정보 구조를 유지하고, 커서가 닿은 프로젝트만 조용히 강조합니다.</p>
+        </div>
+        <div class="archive-rail" data-archive-rail></div>
+      </section>
+
+      <section class="approach-section" id="approach" data-section="approach">
+        <div class="approach-note">
+          <p class="eyebrow">04 / APPROACH</p>
+          <h2>Motion with a reason.</h2>
+          <p>메뉴는 위치를 알려주고, 갤러리는 맥락을 만들고, 카드의 링크는 실제 프로젝트로 이어집니다.</p>
+        </div>
+        <div class="approach-list">
+          <article><span>01</span><strong>Limelight nav</strong><p>현재 섹션을 빛으로 표시합니다.</p></article>
+          <article><span>02</span><strong>Circular gallery</strong><p>사진을 돌리며 프로젝트를 비교합니다.</p></article>
+          <article><span>03</span><strong>Native links</strong><p>샘플이 실제 Pages·Repo로 연결됩니다.</p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../projects.js"></script>
+  <script src="./concept.js"></script>
+</body>
+</html>

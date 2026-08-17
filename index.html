@@ -9,23 +9,25 @@
   <link rel="icon" href="./assets/favicon-16.png?v=20260521-2" sizes="16x16" type="image/png">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=20260521-2">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./interactive-work.css">
 </head>
-<body>
+<body data-asset-base="./">
   <header class="site-header">
     <a class="brand" href="./" aria-label="gomgom.dev 홈">
       <span class="brand-mark" aria-hidden="true">g</span>
       <span>gomgom.dev</span>
     </a>
-    <nav class="top-nav" aria-label="주요 섹션">
-      <a href="#work">Work</a>
-      <a href="#projects">Archive</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
+    <nav class="top-nav limelight-nav" aria-label="주요 섹션">
+      <span class="limelight-indicator" aria-hidden="true"></span>
+      <a class="limelight-item active" href="#top" data-target="top">Home</a>
+      <a class="limelight-item" href="#work" data-target="work">Work</a>
+      <a class="limelight-item" href="#projects" data-target="archive">Archive</a>
+      <a class="limelight-item" href="#approach" data-target="approach">Approach</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero-section" id="top">
+    <section class="hero-section" id="top" data-section="top">
       <div class="hero-copy">
         <h1>gomgom Studio</h1>
         <p>
@@ -66,15 +68,43 @@
       <div><strong data-site-count>0</strong><span>sites & data</span></div>
     </section>
 
-    <section class="section work-section" id="work">
+    <section class="section work-section interactive-work-section" id="work" data-section="work">
       <div class="section-heading">
-        <h2>Work</h2>
-        <p>지금 개발·검증 중인 앱, 자동화, 보안·금융 데이터 프로젝트를 우선 보여줍니다.</p>
+        <h2>Scroll into the work.</h2>
+        <p>휠, 드래그, 키보드로 프로젝트 사진을 돌려보고 가운데 카드에서 바로 진입합니다.</p>
+      </div>
+      <div class="circular-gallery interactive-work-gallery" data-gallery tabindex="0" aria-label="진행 중인 프로젝트 원형 갤러리">
+        <div class="gallery-stage" data-gallery-stage></div>
+        <div class="gallery-center-card">
+          <div class="gallery-center-media" data-gallery-media></div>
+          <div class="gallery-center-copy">
+            <span class="gallery-kicker" data-gallery-type>Project</span>
+            <h3 data-gallery-name>Project</h3>
+            <p data-gallery-summary>Project summary</p>
+            <a class="gallery-open" data-gallery-link href="./">
+              프로젝트 열기
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <button type="button" data-gallery-prev aria-label="이전 프로젝트">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 18-6-6 6-6"></path></svg>
+          </button>
+          <span><b data-gallery-index>01</b> / <span data-gallery-total>07</span></span>
+          <button type="button" data-gallery-next aria-label="다음 프로젝트">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"></path></svg>
+          </button>
+        </div>
+        <p class="gallery-hint">
+          <svg class="hint-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 8l3-3M4 8l3 3M20 16H4m16 0-3-3m3 3-3 3"></path></svg>
+          <span>drag or scroll to explore</span>
+        </p>
       </div>
       <div class="featured-grid" data-featured-projects></div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="projects" data-section="archive">
       <div class="section-heading">
         <h2>Archive</h2>
         <p>참조 레포, Pages, App Store 링크를 한 카드에서 확인할 수 있습니다.</p>
@@ -90,7 +120,7 @@
       <div class="portfolio-grid" data-project-grid></div>
     </section>
 
-    <section class="section approach-section" id="approach">
+    <section class="section approach-section" id="approach" data-section="approach">
       <div class="section-heading">
         <h2>Approach</h2>
         <p>작은 제품이라도 배포, 지원, 개인정보, 문서 링크까지 사용자가 확인할 수 있는 표면을 함께 만듭니다.</p>
@@ -173,5 +203,6 @@
 
   <script src="./projects.js"></script>
   <script src="./site.js"></script>
+  <script src="./concept/concept.js"></script>
 </body>
 </html>
