@@ -316,20 +316,24 @@ window.GOMGOM_PROJECTS = [
     icon: "assets/icons/porta.png",
     type: "iOS / macOS App",
     category: "app",
-    summary: "iPhone, iPad, Mac에서 Mac 화면을 보고 조작하는 Apple 원격 제어 클라이언트 앱입니다.",
-    description: "porta는 Mac에서 실행되는 host 앱과 연결해 화면 스트리밍, 클릭, 텍스트 입력을 처리하는 Apple 플랫폼 원격 제어 앱입니다. App Store 준비 흐름과 지원 문서를 별도 페이지로 분리해 관리합니다.",
+    summary: "View and control your Mac from iPhone, iPad, or another Mac. / iPhone, iPad, 다른 Mac에서 Mac 화면을 보고 제어합니다.",
+    description: "Install both apps: the free porta host on the Mac you want to control, and the paid porta client on iPhone, iPad, or another Mac. Put both devices on the same local network, allow Screen Recording and Accessibility for porta host, then pair with the six-digit code.\n\n두 앱을 모두 설치하세요. 제어할 Mac에는 무료 porta host를, 접속할 기기에는 유료 porta를 설치합니다. 같은 로컬 네트워크에 연결하고 porta host에 화면 기록과 손쉬운 사용 권한을 허용한 뒤 6자리 코드로 페어링합니다. 로그인 화면과 FileVault 사전 부팅 제어는 지원하지 않습니다.",
     highlights: [
       "Bonjour 기반 로컬 네트워크 Mac 검색",
       "6자리 페어링 코드로 연결 승인",
-      "ScreenCaptureKit과 H.264 기반 화면 스트리밍",
-      "iPhone, iPad, Mac 클라이언트 앱 표면"
+      "Screen Recording and Accessibility permissions on the Mac host",
+      "무료 porta host + 유료 porta client 설치 안내",
+      "ScreenCaptureKit과 H.264 기반 화면 스트리밍"
     ],
     stack: ["Swift", "Network.framework", "ScreenCaptureKit", "App Store"],
-    sourceRepo: "jhny-kor/porta",
-    repoUrl: "https://github.com/jhny-kor/porta",
-    referenceUrl: "https://github.com/jhny-kor/porta",
+    sourceRepo: "Private source repository",
+    referenceUrl: "https://gomgom-dev.github.io/porta/",
     pagePath: "./porta/",
-    supportUrl: "https://github.com/jhny-kor/porta/issues",
+    storeLinks: [
+      { label: "porta Client (paid) · App Store", shortLabel: "Client App Store", url: "https://apps.apple.com/app/id6770163081" },
+      { label: "porta Host (free) · Mac App Store", shortLabel: "Host Mac App Store", url: "https://apps.apple.com/app/id6771231445" }
+    ],
+    supportUrl: "https://github.com/gomgom-dev/gomgom-dev.github.io/issues/new",
     policyUrl: "./privacy-policy/"
   },
   {
