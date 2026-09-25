@@ -310,28 +310,6 @@ window.GOMGOM_PROJECTS = [
     policyUrl: "./privacy-policy/"
   },
   {
-    slug: "hopover",
-    name: "폴짝 (Hopover)",
-    mark: "HO",
-    icon: "assets/icons/hopover.png",
-    type: "macOS App",
-    category: "app",
-    current: true,
-    summary: "앱 아이콘에 파일을 끌어놓으면 다른 Mac의 바탕화면 shared 폴더로 바로 보내는 Mac 앱입니다.",
-    description: "폴짝(Hopover)은 Tailscale 위에서 SSH/SFTP로 내 Mac끼리 파일과 폴더를 직접 보내는 macOS 앱입니다. 중간 서버 없이 전송하고, 비밀번호는 저장하지 않으며, 동물·로봇 도트 아이콘으로 꾸밀 수 있습니다.",
-    highlights: [
-      "앱 아이콘에 끌어놓기만 하면 전송",
-      "받는 Mac의 ~/Desktop/shared 폴더로 저장",
-      "서버 없이 SSH/SFTP로 Mac끼리 직접 전송",
-      "도트 아이콘 15종과 내 사진 아이콘"
-    ],
-    stack: ["Swift", "AppKit", "SSH", "Mac App Store"],
-    sourceRepo: "Private",
-    pagePath: "./hopover/",
-    supportUrl: "mailto:gomgomi.k.dev@gmail.com",
-    policyUrl: "./privacy-policy/#hopover"
-  },
-  {
     slug: "porta",
     name: "porta",
     mark: "PT",
